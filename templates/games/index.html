@@ -1,0 +1,30 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Games{% endblock %}
+{% block nav_games %}class="active"{% endblock %}
+{% block content %}
+<h1>Games</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Platform</th>
+			<th>Genre</th>
+			<th>Release Date</th>
+			<th>Publisher</th>
+			<th>Developer</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for game in game_list %}
+		<tr>
+			<td>{{ game.title }}</td>
+			<td>{{ game.platform }}</td>
+			<td>{{ game.genre }}</td>
+			<td>{{ game.release_date }}</td>
+			<td>{{ game.publisher }}</td>
+			<td>{{ game.developer }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

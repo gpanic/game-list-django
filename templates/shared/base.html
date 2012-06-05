@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>{% block title %}Game List{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="{% url home.index %}">Game List</a>
+				<ul class="nav">
+					<li {% block nav_home %}{% endblock %} ><a href="{% url home.index %}">Home</a></li>
+				</ul>
+				<ul class="nav">
+					<li {% block nav_games %}{% endblock %} ><a href="{% url games.index %}">Games</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		{% block content %}
+		<h1>Epic title</h1>
+		<p>asdf foijasfj ioasjiodasjiodasioojd </p>
+		{% endblock %}
+	</div>
+</body>
+</html>
