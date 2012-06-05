@@ -2,7 +2,6 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
 from apps.testapp.models import Poll
 
-# Uncomment the next two lines to enable the admin:
 urlpatterns = patterns('',
     url(r'^$',
         ListView.as_view(
@@ -20,12 +19,3 @@ urlpatterns = patterns('',
         name='poll_results'),
     url(r'^(?P<poll_id>\d+)/vote/$', 'apps.testapp.views.vote'),
 )
-    # Examples:
-    # url(r'^$', 'gamelist.views.home', name='home'),
-    # url(r'^gamelist/', include('gamelist.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),

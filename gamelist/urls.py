@@ -5,12 +5,14 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', include('apps.home.urls')),
 	url(r'^testapp/', include('apps.testapp.urls')),
+	url(r'^games/', include('apps.games.urls')),
 	url(r'^admin/', include(admin.site.urls)),
 
     # Examples:
     # url(r'^$', 'gamelist.views.homegamelistname='home'),
-    # url(r'^gamelist/', include('testproj.foo.urls')),
+    # url(r'^gamelist/', include('gamelist.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
