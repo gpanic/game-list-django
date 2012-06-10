@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
 
+from django.views.generic import TemplateView
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', include('apps.home.urls')),
+    url(r'^register$', 'apps.auth.views.register'),
 	url(r'^testapp/', include('apps.testapp.urls')),
 	url(r'^games/', include('apps.games.urls')),
 	url(r'^admin/', include(admin.site.urls)),

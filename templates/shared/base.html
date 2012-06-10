@@ -18,6 +18,9 @@
 				<ul class="nav">
 					<li {% block nav_games %}{% endblock %} ><a href="{% url games.index %}">Games</a></li>
 				</ul>
+				<ul class="nav pull-right">
+					<li {% block nav_register %}{% endblock %} ><a href="{% url apps.auth.views.register %}">Register</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>

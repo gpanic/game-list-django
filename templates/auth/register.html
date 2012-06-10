@@ -1,0 +1,35 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Login{% endblock %}
+{% block nav_register %}class="active"{% endblock %}
+{% block content %}
+<form class="form-horizontal" action="{% url apps.auth.views.register %}" method="post">
+	{% csrf_token %}
+	{{ form.non_field_errors }}
+	<fieldset>
+		<legend>Sign up</legend>
+		{% for field in form %}
+		{% if field.errors %}
+		<div class="control-group error">
+		{% else %}
+		<div class="control-group">
+		{% endif %}
+			<label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label>
+			<div class="controls">
+				{% if field.html_name == 'password' or field.html_name == 'password_repeat' %}
+				<input type="password" id="id_{{ field.html_name }}" name="{{ field.html_name }}" />
+				{% else %}
+				<input type="text" id="id_{{ field.html_name }}" name="{{ field.html_name }}" />
+				{% endif %}
+				{% if field.errors %}
+				<span class="help-inline">{{ field.errors|striptags }}</span>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="form-actions">
+			<button class="btn btn-primary" type="submit">Submit</button>
+			<button class="btn" type="button"><a href="{% url home.index %}">Cancel</a></button>
+		</div>
+	</fieldset>
+</form>
+{% endblock %}
