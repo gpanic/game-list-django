@@ -18,9 +18,25 @@
 				<ul class="nav">
 					<li {% block nav_games %}{% endblock %} ><a href="{% url games.index %}">Games</a></li>
 				</ul>
+				{% if user.is_authenticated %}
+				<ul class="nav pull-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">My Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="{% url apps.auth.views.logout %}">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="nav pull-right">
+					<li {% block nav_login %}{% endblock %} ><a href="{% url apps.auth.views.login %}">Login</a></li>
+				</ul>
 				<ul class="nav pull-right">
 					<li {% block nav_register %}{% endblock %} ><a href="{% url apps.auth.views.register %}">Register</a></li>
 				</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>

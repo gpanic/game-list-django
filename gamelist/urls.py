@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', include('apps.home.urls')),
-    url(r'^register$', 'apps.auth.views.register'),
+    url(r'^', include('apps.auth.urls')),
 	url(r'^testapp/', include('apps.testapp.urls')),
 	url(r'^games/', include('apps.games.urls')),
 	url(r'^admin/', include(admin.site.urls)),

@@ -33,3 +33,7 @@ class RegistrationForm(forms.Form):
 	# birthday = forms.DateField(blank=True)
 	# website = forms.CharField(max_length=100, blank=True)
 	# about = forms.TextField(blank=True)
+
+class LoginForm(forms.Form):
+	username = forms.CharField(max_length=30)
+	password = forms.CharField(max_length=128)
