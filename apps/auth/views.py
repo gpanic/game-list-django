@@ -11,6 +11,7 @@ from django.template import RequestContext
 
 from apps.auth.models import LoginForm
 from apps.auth.models import RegistrationForm
+from apps.lists.models import List
 
 def register(request):
 	if not request.user.is_authenticated():
@@ -27,6 +28,8 @@ def register(request):
 					else:
 						user = User.objects.create_user(username, email, password)
 						user.save()
+						glist = List(user=user)
+						glist.save()
 						return redirect('home.index')
 				else:
 					messages.error(request, 'Passwords do not match.')		

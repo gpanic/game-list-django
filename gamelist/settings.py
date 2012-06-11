@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'apps.auth',
     'apps.home',
     'apps.games',
+    'apps.lists',
 )
 
 # A sample logging configuration. The only tangible logging

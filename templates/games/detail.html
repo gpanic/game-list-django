@@ -1,30 +1,36 @@
 {% extends "shared/base.html" %}
-{% block title %}{{ block.super }}&nbsp;|&nbsp;Games{% endblock %}
-{% block nav_games %}class="active"{% endblock %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ game.title }}{% endblock %}
 {% block content %}
-<h1>Games</h1>
+<h1>{{ game.title }}</h1>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
 			<th>Title</th>
-			<th>Platform</th>
-			<th>Genre</th>
-			<th>Release Date</th>
-			<th>Publisher</th>
-			<th>Developer</th>
+			<td>{{ game.title }}</td>
 		</tr>
 	</thead>
 	<tbody>
-{% for game in game_list %}
 		<tr>
-			<td><a href="{% url games.detail game.id %}">{{ game.title }}</a></td>
+			<th>Platform</th>
 			<td>{{ game.platform }}</td>
+		</tr>
+		<tr>
+			<th>Genre</th>
 			<td>{{ game.genre }}</td>
+		</tr>
+		<tr>
+			<th>Release date</th>
 			<td>{{ game.release_date }}</td>
+		</tr>
+		<tr>
+			<th>Publisher</th>
 			<td>{{ game.publisher }}</td>
+		</tr>
+		<tr>
+			<th>Developer</th>
 			<td>{{ game.developer }}</td>
 		</tr>
-{% endfor %}
 	</tbody>
 </table>
+<a href="{% url games.index %}">Back to list</a>
 {% endblock %}
