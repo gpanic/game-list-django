@@ -11,6 +11,6 @@ urlpatterns = patterns('',
 	url(r'^(?P<pk>\d+)/$',
 		DetailView.as_view(
 			model=Game,
-			template_name='games/detail.html'),
-		name='games.detail'),
+			template_name='games/details.html'),
+		name='games.details'),
 )

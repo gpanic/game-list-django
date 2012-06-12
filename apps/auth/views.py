@@ -54,7 +54,10 @@ def login(request):
 				if user != None:
 					if user.is_active:
 						django_login(request, user)
-						return redirect('home.index')
+						if request.POST.get('next', 'None') == 'None':
+							return redirect('home.index')
+						else:
+							return redirect(request.POST.get('next', 'None'))
 					else:
 						messages.error(request, 'Your account has been diabled.')
 				else:
@@ -65,7 +68,7 @@ def login(request):
 		return redirect('home.index')
 	return render_to_response(
 		'auth/login.html',
-		{'form': form},
+		{'form': form, 'next':request.GET.get('next', 'None')},
 		context_instance=RequestContext(request)
 	)
 

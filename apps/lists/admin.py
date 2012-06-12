@@ -11,7 +11,6 @@ class ListItemInline(admin.TabularInline):
 	extra = 1
 
 class ListAdmin(admin.ModelAdmin):
-	readonly_fields = [ 'user', ]
 	inlines= [
 		ListItemInline,
 	]

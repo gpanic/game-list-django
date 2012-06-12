@@ -24,6 +24,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">My Profile</a></li>
+							<li><a href="{% url apps.lists.views.details user.username %}">My List</a></li>
 							{% if user.is_staff %}
 							<li class="divider"></li>
 							<li><a href="{% url admin:index %}">Admin panel</a></li>

@@ -162,3 +162,5 @@ LOGGING = {
 }
 
 AUTH_PROFILE_MODULE = 'apps.auth.UserProfile'
+
+LOGIN_URL = '/login'

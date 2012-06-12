@@ -31,7 +31,7 @@ class List(models.Model):
 
 class ListItem(models.Model):
 	game_list = models.ForeignKey(List)
-	game = models.ForeignKey(Game)
+	game = models.ForeignKey(Game, unique=True)
 
 	status = models.PositiveSmallIntegerField(choices=STATUS, null=True, blank=True)
 	rating = models.PositiveSmallIntegerField(choices=RATING, null=True, blank=True)

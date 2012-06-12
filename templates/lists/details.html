@@ -1,0 +1,39 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ list.user.username }}'s List{% endblock %}
+{% block content %}
+<h1>{{ list.user.username }}'s List</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Game</th>
+			<th>Platform</th>
+			<th>Genre</th>
+			<th>Status</th>
+			<th>Your rating</th>
+			<th>Time spent</th>
+			<th>Money spent</th>
+			<th>Notes</th>
+			{% if user.is_authenticated and user.username == list.user.username %}
+			<th></th>
+			{% endif %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in list.listitem_set.all %}
+		<tr>
+			<td>{{ item.game.title }}</td>
+			<td>{{ item.game.platform }}</td>
+			<td>{{ item.game.genre }}</td>
+			<td>{{ item.status }}</td>
+			<td>{{ item.rating }}</td>
+			<td>{{ item.time_spent }}</td>
+			<td>{{ item.money_spent }}</td>
+			<td>{{ item.notes }}</td>
+			{% if user.is_authenticated and user.username == list.user.username %}
+			<td><a href="{% url apps.lists.views.remove user.username item.game.id %}" class="icon-minus-sign"></a></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

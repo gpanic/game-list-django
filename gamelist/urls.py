@@ -9,9 +9,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', include('apps.home.urls')),
     url(r'^', include('apps.auth.urls')),
-	url(r'^testapp/', include('apps.testapp.urls')),
-	url(r'^games/', include('apps.games.urls')),
-	url(r'^admin/', include(admin.site.urls)),
+    url(r'^testapp/', include('apps.testapp.urls')),
+    url(r'^games/', include('apps.games.urls')),
+    url(r'^lists/', include('apps.lists.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 
     # Examples:
     # url(r'^$', 'gamelist.views.homegamelistname='home'),
