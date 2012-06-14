@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ModelForm, Textarea, HiddenInput
+from django.forms.extras.widgets import SelectDateWidget
+
 from apps.games.models import Game
 
 RATING = (
@@ -45,3 +48,12 @@ class ListItem(models.Model):
 
 	def __unicode__(self):
 		return "{} {}".format(self.game_list.user.username, self.game.title)
+
+class ListItemForm(ModelForm):
+	class Meta:
+		model = ListItem
+		widgets = {
+			'notes': Textarea(attrs={'class': 'input-xlarge', 'rows': 3}),
+			'game_list': HiddenInput,
+			'game': HiddenInput,
+		}

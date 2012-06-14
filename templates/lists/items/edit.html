@@ -1,0 +1,46 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Edit {{ form.instance.game.title}} entry{% endblock %}
+{% block content %}
+{% if messages %}
+<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">x</button>
+	<h4 class="alert-heading">Success!</h4>
+	<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
+<form class="form-horizontal" action="{% url apps.lists.views.edit user.username form.instance.game.id %}" method="post">
+	{% csrf_token %}
+	{% for hidden in form.hidden_fields %}
+	{{ hidden }}
+	{% endfor %}
+	<fieldset>
+		<legend>Edit {{ form.instance.game.title }} entry</legend>
+		{% for field in form.visible_fields %}
+		{% if field.errors %}
+		<div class="control-group error">
+		{% else %}
+		<div class="control-group">
+		{% endif %}
+			<label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label>
+			<div class="controls">
+				{{ field }}
+				{% if field.errors %}
+				<span class="help-inline">{{ field.errors|striptags }}</span>
+				{% endif %}
+				{% if field.html_name == 'date_start' or field.html_name == 'date_finish'%}
+				<p class="help-block"><small>Format: 2006-10-25</small></p>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Save changes</button>
+			<button type="button" class="btn"><a href="{% url apps.lists.views.details user.username %}">Cancel</a></button>
+		</div>
+	</fieldset>
+</form>
+{% endblock %}
