@@ -1,7 +1,9 @@
 {% extends "shared/base.html" %}
 {% block title %}{{ block.super }}&nbsp;|&nbsp;{{ list.user.username }}'s List{% endblock %}
 {% block content %}
-<h1>{{ list.user.username }}'s List</h1>
+<div class="page-header">
+	<h1>{{ list.user.username }}'s List</h1>
+</div>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

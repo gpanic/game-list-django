@@ -4,19 +4,7 @@ from django.forms import ModelForm, Textarea, HiddenInput
 from django.forms.extras.widgets import SelectDateWidget
 
 from apps.games.models import Game
-
-RATING = (
-	(10, '10'),
-	(9,' 9'),
-	(8,' 8'),
-	(7,' 7'),
-	(6,' 6'),
-	(5,' 5'),
-	(4,' 4'),
-	(3,' 3'),
-	(2,' 2'),
-	(1,' 1'),
-)
+from apps.games.models import RATING
 
 STATUS = (
 	(1, 'Playing'),
@@ -34,7 +22,7 @@ class List(models.Model):
 
 class ListItem(models.Model):
 	game_list = models.ForeignKey(List)
-	game = models.ForeignKey(Game, unique=True)
+	game = models.ForeignKey(Game)
 
 	status = models.PositiveSmallIntegerField(choices=STATUS, null=True, blank=True)
 	rating = models.PositiveSmallIntegerField(choices=RATING, null=True, blank=True)
@@ -48,6 +36,9 @@ class ListItem(models.Model):
 
 	def __unicode__(self):
 		return "{} {}".format(self.game_list.user.username, self.game.title)
+
+	class Meta:
+		unique_together = ('game_list', 'game')
 
 class ListItemForm(ModelForm):
 	class Meta:

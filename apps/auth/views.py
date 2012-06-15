@@ -9,8 +9,8 @@ from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from apps.auth.models import LoginForm
-from apps.auth.models import RegistrationForm
+from apps.auth.forms import LoginForm
+from apps.auth.forms import RegistrationForm
 from apps.lists.models import List
 
 def register(request):

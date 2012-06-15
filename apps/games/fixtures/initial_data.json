@@ -1,0 +1,159 @@
+[
+    {
+        "fields": {
+            "description": "",
+            "name": "RPG"
+        },
+        "model": "games.genre",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "description": "",
+            "name": "FPS"
+        },
+        "model": "games.genre",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "description": "",
+            "name": "Adventure"
+        },
+        "model": "games.genre",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "PS3"
+        },
+        "model": "games.platform",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "PC"
+        },
+        "model": "games.platform",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Xbox 360"
+        },
+        "model": "games.platform",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Electronic Arts"
+        },
+        "model": "games.publisher",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Activision"
+        },
+        "model": "games.publisher",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "THQ"
+        },
+        "model": "games.publisher",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Dev1"
+        },
+        "model": "games.developer",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Dev2"
+        },
+        "model": "games.developer",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Dev3"
+        },
+        "model": "games.developer",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "sci-fi"
+        },
+        "model": "games.tag",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "fantasy"
+        },
+        "model": "games.tag",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "horror"
+        },
+        "model": "games.tag",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "developer": 1,
+            "genre": 1,
+            "platform": 1,
+            "publisher": 1,
+            "release_date": "2012-06-15",
+            "summary": "asldjasodj asoidjasiod jajdoasd",
+            "tags": [
+                1,
+                2
+            ],
+            "title": "Game1"
+        },
+        "model": "games.game",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "developer": 2,
+            "genre": 2,
+            "platform": 2,
+            "publisher": 2,
+            "release_date": "2012-06-15",
+            "summary": "oasj doajdjpa sdjdod sasd",
+            "tags": [
+                3
+            ],
+            "title": "Game2"
+        },
+        "model": "games.game",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "developer": 3,
+            "genre": 3,
+            "platform": 3,
+            "publisher": 3,
+            "release_date": "2012-06-15",
+            "summary": "sdf asdfadsfsdsdfjksdf\r\nsd fsdflkjdsf jkldsf",
+            "tags": [
+                2
+            ],
+            "title": "Game3"
+        },
+        "model": "games.game",
+        "pk": 3
+    }
+]
