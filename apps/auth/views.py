@@ -8,6 +8,7 @@ from django.forms.util import ErrorList
 from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.core.urlresolvers import reverse
 
 from apps.auth.forms import LoginForm
 from apps.auth.forms import RegistrationForm
@@ -30,7 +31,7 @@ def register(request):
 						user.save()
 						glist = List(user=user)
 						glist.save()
-						return redirect('home.index')
+						return redirect(reverse('home.index'), context_instance=RequestContext(request))
 				else:
 					messages.error(request, 'Passwords do not match.')		
 		else:
@@ -55,9 +56,9 @@ def login(request):
 					if user.is_active:
 						django_login(request, user)
 						if request.POST.get('next', 'None') == 'None':
-							return redirect('home.index')
+							return redirect(reverse('home.index'), context_instance=RequestContext(request))
 						else:
-							return redirect(request.POST.get('next', 'None'))
+							return redirect(request.POST.get('next'), context_instance=RequestContext(request))
 					else:
 						messages.error(request, 'Your account has been diabled.')
 				else:
@@ -65,7 +66,7 @@ def login(request):
 		else:
 			form = LoginForm()
 	else:
-		return redirect('home.index')
+		return redirect(reverse('home.index'), context_instance=RequestContext(request))
 	return render_to_response(
 		'auth/login.html',
 		{'form': form, 'next':request.GET.get('next', 'None')},
@@ -74,4 +75,4 @@ def login(request):
 
 def logout(request):
 	django_logout(request)
-	return redirect('home.index')
+	return redirect(reverse('home.index'), context_instance=RequestContext(request))

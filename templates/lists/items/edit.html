@@ -14,9 +14,6 @@
 {% endif %}
 <form class="form-horizontal" action="{% url apps.lists.views.edit user.username form.instance.game.id %}" method="post">
 	{% csrf_token %}
-	{% for hidden in form.hidden_fields %}
-	{{ hidden }}
-	{% endfor %}
 	<fieldset>
 		<legend>Edit {{ form.instance.game.title }} entry</legend>
 		{% for field in form.visible_fields %}
@@ -39,7 +36,7 @@
 		{% endfor %}
 		<div class="form-actions">
 			<button type="submit" class="btn btn-primary">Save changes</button>
-			<button type="button" class="btn"><a href="{% url apps.lists.views.details user.username %}">Cancel</a></button>
+			<a class="btn" href="{% url apps.lists.views.details user.username %}">Cancel</a>
 		</div>
 	</fieldset>
 </form>

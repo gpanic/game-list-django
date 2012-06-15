@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms import ModelForm, Textarea, HiddenInput
 from django.forms.extras.widgets import SelectDateWidget
 
 from apps.games.models import Game
@@ -35,16 +34,8 @@ class ListItem(models.Model):
 	notes = models.TextField(blank=True)
 
 	def __unicode__(self):
-		return "{} {}".format(self.game_list.user.username, self.game.title)
+		return "ListItem {} {}".format(self.game_list.user.username, self.game.title)
 
 	class Meta:
 		unique_together = ('game_list', 'game')
 
-class ListItemForm(ModelForm):
-	class Meta:
-		model = ListItem
-		widgets = {
-			'notes': Textarea(attrs={'class': 'input-xlarge', 'rows': 3}),
-			'game_list': HiddenInput,
-			'game': HiddenInput,
-		}

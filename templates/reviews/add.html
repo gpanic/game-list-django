@@ -1,0 +1,29 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Write a review{% endblock %}
+{% block content %}
+<form class="form-horizontal" action="{% url apps.reviews.views.add %}" method="post">
+	{% csrf_token %}
+	<fieldset>
+		<legend>Write a review</legend>
+		{% for field in form.visible_fields %}
+		{% if field.errors %}
+		<div class="control-group error">
+		{% else %}
+		<div class="control-group">
+		{% endif %}
+			<label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label>
+			<div class="controls">
+				{{ field }}
+				{% if field.errors %}
+				<span class="help-inline">{{ field.errors|striptags }}</span>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a class="btn" href="{% url reviews.index %}">Cancel</a>
+		</div>
+	</fieldset>
+</form>
+{% endblock %}

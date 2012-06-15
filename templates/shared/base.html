@@ -18,6 +18,9 @@
 				<ul class="nav">
 					<li {% block nav_games %}{% endblock %} ><a href="{% url games.index %}">Games</a></li>
 				</ul>
+				<ul class="nav">
+					<li {% block nav_reviews %}{% endblock %} ><a href="{% url reviews.index %}">Reviews</a></li>
+				</ul>
 				{% if user.is_authenticated %}
 				<ul class="nav pull-right">
 					<li class="dropdown">

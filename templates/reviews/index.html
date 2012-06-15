@@ -1,0 +1,31 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Reviews{% endblock %}
+{% block nav_reviews %}class="active"{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>Reviews</h1>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Game</th>
+			<th>Author</th>
+			<th>Created</th>
+			<th>Rating</th>
+			<th>Content</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for review in review_list %}
+		<tr>
+			<td>{{ review.game.title }}</td>
+			<td>{{ review.author.username }}</td>
+			<td>{{ review.date_created }}</td>
+			<td>{{ review.rating }}</td>
+			<td>{{ review.content|truncatechars:10 }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+<a href="{% url apps.reviews.views.add %}">Write a review</a>
+{% endblock %}

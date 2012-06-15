@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^testapp/', include('apps.testapp.urls')),
     url(r'^games/', include('apps.games.urls')),
     url(r'^lists/', include('apps.lists.urls')),
+    url(r'^reviews/', include('apps.reviews.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     # Examples:

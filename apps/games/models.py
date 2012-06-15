@@ -57,13 +57,3 @@ class Game(models.Model):
 
 	def __unicode__(self):
 		return self.title
-
-class Review(models.Model):
-	author = models.ForeignKey(User)
-	game = models.ForeignKey(Game)
-
-	date_created = models.DateField(auto_now_add=True, verbose_name=u'Created')
-	rating = models.PositiveSmallIntegerField(choices=RATING)
-
-	class Meta:
-		unique_together = ('author', 'game')

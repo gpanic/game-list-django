@@ -9,14 +9,16 @@ from django.core.urlresolvers import reverse
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 
-from apps.lists.models import List, ListItem, ListItemForm
+from apps.lists.models import List, ListItem
+from apps.lists.forms import ListItemForm
 from apps.games.models import Game
 
 def details(request, username):
 	user = User.objects.filter(username=username)
 	glist = get_object_or_404(List, user=user)
-	return render_to_response('lists/details.html',
-		{'list': glist,},
+	return render_to_response(
+		'lists/details.html',
+		{ 'list': glist, },
 		context_instance=RequestContext(request)
 	)
 
@@ -30,7 +32,7 @@ def add(request, username, id_game):
 		request.user.save()
 	else:
 		raise Http404
-	return redirect('apps.lists.views.details', username=username)
+	return redirect('apps.lists.views.details', username=username, context_instance=RequestContext(request))
 
 @login_required
 def remove(request, username, id_game):
@@ -40,7 +42,7 @@ def remove(request, username, id_game):
 		list_item.delete()
 	else:
 		raise Http404
-	return redirect('apps.lists.views.details', username=username)
+	return redirect('apps.lists.views.details', username=username, context_instance=RequestContext(request))
 
 @login_required
 def edit(request, username, id_game):
@@ -62,6 +64,6 @@ def edit(request, username, id_game):
 
 	return render_to_response(
 		'lists/items/edit.html',
-		{ 'form':form, },
+		{ 'form': form, },
 		context_instance=RequestContext(request)
 	)

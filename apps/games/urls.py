@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
+
 from apps.games.models import Genre, Platform, Publisher, Developer, Tag, Game
 
 urlpatterns = patterns('',
