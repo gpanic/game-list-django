@@ -1,5 +1,5 @@
 {% extends "shared/base.html" %}
-{% block title %}{{ block.super }}&nbsp;|&nbsp;Edit {{ form.instance.game.title}} Entry{% endblock %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Edit Review{% endblock %}
 {% block content %}
 {% if messages %}
 <div class="alert alert-success alert-block">
@@ -12,10 +12,10 @@
 	</ul>
 </div>
 {% endif %}
-<form class="form-horizontal" action="{% url apps.lists.views.edit user.username form.instance.game.id %}" method="post">
+<form class="form-horizontal" action="{% url apps.reviews.views.edit form.instance.id %}" method="post">
 	{% csrf_token %}
 	<fieldset>
-		<legend>Edit {{ form.instance.game.title }} Entry</legend>
+		<legend>Edit Review</legend>
 		{% for field in form.visible_fields %}
 		{% if field.errors %}
 		<div class="control-group error">
@@ -36,7 +36,7 @@
 		{% endfor %}
 		<div class="form-actions">
 			<button type="submit" class="btn btn-primary">Save changes</button>
-			<a class="btn" href="{% url apps.lists.views.details user.username %}">Cancel</a>
+			<a class="btn" href="{% url reviews.details form.instance.id %}">Cancel</a>
 		</div>
 	</fieldset>
 </form>

@@ -1,10 +1,10 @@
 {% extends "shared/base.html" %}
-{% block title %}{{ block.super }}&nbsp;|&nbsp;Write a review{% endblock %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Write a Review{% endblock %}
 {% block content %}
 <form class="form-horizontal" action="{% url apps.reviews.views.add %}" method="post">
 	{% csrf_token %}
 	<fieldset>
-		<legend>Write a review</legend>
+		<legend>Write a Review</legend>
 		{% for field in form.visible_fields %}
 		{% if field.errors %}
 		<div class="control-group error">

@@ -13,7 +13,7 @@ class Review(models.Model):
 	content = models.TextField()
 
 	def __unicode__(self):
-		return "Review {} {}".format(author.username, game.title)
+		return "Review {} {}".format(self.author.username, self.game.title)
 
 	class Meta:
 		unique_together = ('author', 'game')

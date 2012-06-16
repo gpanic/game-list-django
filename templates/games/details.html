@@ -1,7 +1,9 @@
 {% extends "shared/base.html" %}
 {% block title %}{{ block.super }}&nbsp;|&nbsp;{{ game.title }}{% endblock %}
 {% block content %}
-<h1>{{ game.title }}</h1>
+<div class="page-header">
+	<h1>{{ game.title }}</h1>
+</div>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

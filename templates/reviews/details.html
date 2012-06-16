@@ -1,0 +1,39 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ reviews.author.username }}'s Review of {{ review.game.title }}{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>
+		{{ review.game.title }} Review
+		{% if review.author == user %}
+		<small><a href="{% url apps.reviews.views.edit review.id %}" class="icon-pencil"></a></small>
+		<small><a href="{% url apps.reviews.views.remove review.id %}" class="icon-remove"></a></small>
+		{% endif %}
+	</h1>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Game</th>
+			<td>{{ review.game.title }}</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Author</th>
+			<td>{{ review.author.username }}</td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td>{{ review.date_created }}</td>
+		</tr>
+		<tr>
+			<th>Rating</th>
+			<td>{{ review.rating }}</td>
+		</tr>
+	</tbody>
+</table>
+<div class="well">
+{{ review.content }}
+</div>
+<a href="{% url reviews.index %}">Back to list</a>
+{% endblock %}

@@ -1,17 +1,17 @@
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render_to_response
-from django.shortcuts import redirect
-from django.template import RequestContext
-from django.http import Http404
-from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
-from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.urlresolvers import reverse
+from django.http import Http404
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
-from apps.lists.models import List, ListItem
-from apps.lists.forms import ListItemForm
 from apps.games.models import Game
+from apps.lists.forms import ListItemForm
+from apps.lists.models import List, ListItem
 
 def details(request, username):
 	user = User.objects.filter(username=username)
@@ -32,17 +32,7 @@ def add(request, username, id_game):
 		request.user.save()
 	else:
 		raise Http404
-	return redirect('apps.lists.views.details', username=username, context_instance=RequestContext(request))
-
-@login_required
-def remove(request, username, id_game):
-	if request.user.username == username:
-		game = get_object_or_404(Game, pk=id_game)
-		list_item = request.user.list.listitem_set.get(game=game)
-		list_item.delete()
-	else:
-		raise Http404
-	return redirect('apps.lists.views.details', username=username, context_instance=RequestContext(request))
+	return redirect(reverse('apps.lists.views.details', args=[username]), context_instance=RequestContext(request))
 
 @login_required
 def edit(request, username, id_game):
@@ -67,3 +57,13 @@ def edit(request, username, id_game):
 		{ 'form': form, },
 		context_instance=RequestContext(request)
 	)
+
+@login_required
+def remove(request, username, id_game):
+	if request.user.username == username:
+		game = get_object_or_404(Game, pk=id_game)
+		list_item = request.user.list.listitem_set.get(game=game)
+		list_item.delete()
+	else:
+		raise Http404
+	return redirect(reverse('apps.lists.views.details', args=[username]), context_instance=RequestContext(request))

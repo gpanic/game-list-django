@@ -28,6 +28,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#">My Profile</a></li>
 							<li><a href="{% url apps.lists.views.details user.username %}">My List</a></li>
+							<li><a href="{% url apps.reviews.views.index_for_user user.username %}">My Reviews</a></li>
 							{% if user.is_staff %}
 							<li class="divider"></li>
 							<li><a href="{% url admin:index %}">Admin panel</a></li>
