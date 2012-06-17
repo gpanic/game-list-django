@@ -12,7 +12,17 @@ from apps.reviews.forms import ReviewForm
 from apps.reviews.models import Review
 
 @login_required
-def add(request):
+def index_for_user(request, username):
+	review_list = User.objects.get(username=username).review_set.all()
+
+	return render_to_response(
+		'reviews/review_index_for_user.html',
+		{ 'review_list': review_list, },
+		context_instance=RequestContext(request)
+	)
+
+@login_required
+def create(request):
 	if request.method == 'POST':
 		review = Review()
 		review.author = request.user
@@ -24,23 +34,13 @@ def add(request):
 		form = ReviewForm()
 
 	return render_to_response(
-		'reviews/add.html',
+		'reviews/review_add.html',
 		{ 'form': form, },
 		context_instance=RequestContext(request)
 	)
 
 @login_required
-def index_for_user(request, username):
-	review_list = User.objects.get(username=username).review_set.all()
-
-	return render_to_response(
-		'reviews/index_for_user.html',
-		{ 'review_list': review_list, },
-		context_instance=RequestContext(request)
-	)
-
-@login_required
-def edit(request, review_id):
+def update(request, review_id):
 	review = get_object_or_404(Review, pk=review_id)
 	if request.user == review.author:
 		if request.method == 'POST':
@@ -53,13 +53,13 @@ def edit(request, review_id):
 	else:
 		raise Http404
 	return render_to_response(
-		'reviews/edit.html',
+		'reviews/review_edit.html',
 		{ 'form': form, },
 		context_instance=RequestContext(request)
 	)
 
 @login_required
-def remove(request, review_id):
+def delete(request, review_id):
 	review = get_object_or_404(Review, pk=review_id)
 	if request.user == review.author:
 		review.delete()

@@ -38,4 +38,3 @@ class ListItem(models.Model):
 
 	class Meta:
 		unique_together = ('game_list', 'game')
-
