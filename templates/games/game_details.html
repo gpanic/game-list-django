@@ -34,5 +34,23 @@
 		</tr>
 	</tbody>
 </table>
+<div class="row">
+	<div class="span6">
+		<h2>Reviews</h2><br />
+		{% if game.review_set.all %}
+		{% for review in game.review_set.all %}
+		<div class="span5 well">
+			<h4>{{ review.author.username}}
+				<small>on {{ review.date_created }}</small>
+			</h4>
+			<i>Rating: {{ review.rating }}</i></br>
+			<i><a style="color:#333;"href="{% url reviews_review_details review.id %}">{{ review.content|truncatechars:300}}</a></i>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="span5 well">No reviews yet.</div>
+		{% endif %}
+	</div>
+</div>
 <a href="{% url games_game_index %}">Back to list</a>
 {% endblock %}
