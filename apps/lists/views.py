@@ -13,7 +13,7 @@ from apps.games.models import Game
 from apps.lists.forms import ListItemForm
 from apps.lists.models import List, ListItem
 
-def details(request, username):
+def list_details(request, username):
 	user = User.objects.filter(username=username)
 	glist = get_object_or_404(List, user=user)
 	return render_to_response(
@@ -23,7 +23,7 @@ def details(request, username):
 	)
 
 @login_required
-def create(request, username, id_game):
+def listitem_create(request, username, id_game):
 	if request.user.username == username:
 		game = get_object_or_404(Game, pk=id_game)
 		list_item = ListItem()
@@ -32,10 +32,10 @@ def create(request, username, id_game):
 		request.user.save()
 	else:
 		raise Http404
-	return redirect(reverse('apps.lists.views.details', args=[username]), context_instance=RequestContext(request))
+	return redirect(reverse('lists_list_details', args=[username]), context_instance=RequestContext(request))
 
 @login_required
-def update(request, username, id_game):
+def listitem_update(request, username, id_game):
 	if request.user.username == username:
 		game = get_object_or_404(Game, pk=id_game)
 		try:
@@ -59,11 +59,11 @@ def update(request, username, id_game):
 	)
 
 @login_required
-def delete(request, username, id_game):
+def listitem_delete(request, username, id_game):
 	if request.user.username == username:
 		game = get_object_or_404(Game, pk=id_game)
 		list_item = request.user.list.listitem_set.get(game=game)
 		list_item.delete()
 	else:
 		raise Http404
-	return redirect(reverse('apps.lists.views.details', args=[username]), context_instance=RequestContext(request))
+	return redirect(reverse('lists_list_details', args=[username]), context_instance=RequestContext(request))

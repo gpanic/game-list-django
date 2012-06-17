@@ -18,7 +18,7 @@
 	<tbody>
 {% for review in review_list %}
 		<tr>
-			<td><a href="{% url reviews.details review.id %}">{{ review.game.title }}</a></td>
+			<td><a href="{% url reviews_review_details review.id %}">{{ review.game.title }}</a></td>
 			<td>{{ review.author.username }}</td>
 			<td>{{ review.date_created }}</td>
 			<td>{{ review.rating }}</td>
@@ -27,5 +27,5 @@
 {% endfor %}
 	</tbody>
 </table>
-<a href="{% url apps.reviews.views.add %}">Write a review</a>
+<a href="{% url reviews_review_create %}">Write a review</a>
 {% endblock %}

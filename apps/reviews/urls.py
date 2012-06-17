@@ -10,18 +10,18 @@ urlpatterns = patterns('apps.reviews.views',
 			queryset=Review.objects.all(),
 			template_name='reviews/review_index.html',
 		),
-		name='reviews.index'
+		name='reviews_review_index'
 	),
-	url(r'^add/$', 'create'),
+	url(r'^add/$', 'review_create', name='reviews_review_create'),
 	url(r'^(?P<review_id>\d+)/$',
 		DetailView.as_view(
 			model=Review,
 			template_name='reviews/review_details.html',
 			pk_url_kwarg='review_id',
 		),
-		name='reviews.details'
+		name='reviews_review_details'
 	),
-	url(r'^(?P<review_id>\d+)/edit/$', 'update'),
-	url(r'^(?P<review_id>\d+)/remove/$', 'delete'),
+	url(r'^(?P<review_id>\d+)/edit/$', 'review_update', name='reviews_review_update'),
+	url(r'^(?P<review_id>\d+)/remove/$', 'review_delete', name='reviews_review_delete'),
 
 )

@@ -5,5 +5,5 @@ urlpatterns = patterns('',
 	url(r'^$',
 		TemplateView.as_view(
 			template_name='home/index.html'),
-		name="home.index"),
+		name="home_index"),
 )

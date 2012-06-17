@@ -8,10 +8,12 @@ urlpatterns = patterns('',
 		ListView.as_view(
 			queryset=Game.objects.all(),
 			template_name='games/game_index.html'),
-		name='games.index'),
+		name='games_game_index',
+	),
 	url(r'^(?P<pk>\d+)/$',
 		DetailView.as_view(
 			model=Game,
 			template_name='games/game_details.html'),
-		name='games.details'),
+		name='games_game_details',
+	),
 )

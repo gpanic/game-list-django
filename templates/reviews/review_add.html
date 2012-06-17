@@ -1,7 +1,7 @@
 {% extends "shared/base.html" %}
 {% block title %}{{ block.super }}&nbsp;|&nbsp;Write a Review{% endblock %}
 {% block content %}
-<form class="form-horizontal" action="{% url apps.reviews.views.add %}" method="post">
+<form class="form-horizontal" action="{% url reviews_review_create %}" method="post">
 	{% csrf_token %}
 	<fieldset>
 		<legend>Write a Review</legend>
@@ -22,7 +22,7 @@
 		{% endfor %}
 		<div class="form-actions">
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<a class="btn" href="{% url reviews.index %}">Cancel</a>
+			<a class="btn" href="{% url reviews_review_index %}">Cancel</a>
 		</div>
 	</fieldset>
 </form>

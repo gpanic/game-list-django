@@ -22,14 +22,14 @@
 	<tbody>
 {% for game in game_list %}
 		<tr>
-			<td><a href="{% url games.details game.id %}">{{ game.title }}</a></td>
+			<td><a href="{% url games_game_details game.id %}">{{ game.title }}</a></td>
 			<td>{{ game.platform }}</td>
 			<td>{{ game.genre }}</td>
 			<td>{{ game.release_date }}</td>
 			<td>{{ game.publisher }}</td>
 			<td>{{ game.developer }}</td>
 			{% if user.is_authenticated %}
-			<td><a href="{% url apps.lists.views.add user.username game.id %}" class="icon-plus-sign"></a></td>
+			<td><a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a></td>
 			{% endif %}
 		</tr>
 {% endfor %}

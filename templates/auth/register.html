@@ -13,7 +13,7 @@
 	</ul>
 </div>
 {% endif %}
-<form class="form-horizontal" action="{% url apps.auth.views.register %}" method="post">
+<form class="form-horizontal" action="{% url auth_register %}" method="post">
 	{% csrf_token %}
 	{{ form.non_field_errors }}
 	<fieldset>
@@ -39,7 +39,7 @@
 		{% endfor %}
 		<div class="form-actions">
 			<button class="btn btn-primary" type="submit">Submit</button>
-			<a class="btn" href="{% url home.index %}">Cancel</a>
+			<a class="btn" href="{% url home_index %}">Cancel</a>
 		</div>
 	</fieldset>
 </form>

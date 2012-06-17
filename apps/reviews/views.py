@@ -12,7 +12,7 @@ from apps.reviews.forms import ReviewForm
 from apps.reviews.models import Review
 
 @login_required
-def index_for_user(request, username):
+def review_index_for_user(request, username):
 	review_list = User.objects.get(username=username).review_set.all()
 
 	return render_to_response(
@@ -22,14 +22,14 @@ def index_for_user(request, username):
 	)
 
 @login_required
-def create(request):
+def review_create(request):
 	if request.method == 'POST':
 		review = Review()
 		review.author = request.user
 		form = ReviewForm(request.POST, instance=review)
 		if form.is_valid():
 			form.save()
-			return redirect(reverse('reviews.index'), context_instance=RequestContext(request))
+			return redirect(reverse('reviews_review_index'), context_instance=RequestContext(request))
 	else:
 		form = ReviewForm()
 
@@ -40,7 +40,7 @@ def create(request):
 	)
 
 @login_required
-def update(request, review_id):
+def review_update(request, review_id):
 	review = get_object_or_404(Review, pk=review_id)
 	if request.user == review.author:
 		if request.method == 'POST':
@@ -59,10 +59,10 @@ def update(request, review_id):
 	)
 
 @login_required
-def delete(request, review_id):
+def review_delete(request, review_id):
 	review = get_object_or_404(Review, pk=review_id)
 	if request.user == review.author:
 		review.delete()
 	else:
 		raise Http404
-	return redirect(reverse('reviews.index'), context_instance=RequestContext(request))
+	return redirect(reverse('reviews_review_index'), context_instance=RequestContext(request))

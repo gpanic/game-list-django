@@ -11,15 +11,15 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="{% url home.index %}">Game List</a>
+				<a class="brand" href="{% url home_index %}">Game List</a>
 				<ul class="nav">
-					<li {% block nav_home %}{% endblock %} ><a href="{% url home.index %}">Home</a></li>
+					<li {% block nav_home %}{% endblock %} ><a href="{% url home_index %}">Home</a></li>
 				</ul>
 				<ul class="nav">
-					<li {% block nav_games %}{% endblock %} ><a href="{% url games.index %}">Games</a></li>
+					<li {% block nav_games %}{% endblock %} ><a href="{% url games_game_index %}">Games</a></li>
 				</ul>
 				<ul class="nav">
-					<li {% block nav_reviews %}{% endblock %} ><a href="{% url reviews.index %}">Reviews</a></li>
+					<li {% block nav_reviews %}{% endblock %} ><a href="{% url reviews_review_index %}">Reviews</a></li>
 				</ul>
 				{% if user.is_authenticated %}
 				<ul class="nav pull-right">
@@ -27,23 +27,23 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">My Profile</a></li>
-							<li><a href="{% url apps.lists.views.details user.username %}">My List</a></li>
-							<li><a href="{% url apps.reviews.views.index_for_user user.username %}">My Reviews</a></li>
+							<li><a href="{% url lists_list_details user.username %}">My List</a></li>
+							<li><a href="{% url reviews_review_index_for_user user.username %}">My Reviews</a></li>
 							{% if user.is_staff %}
 							<li class="divider"></li>
 							<li><a href="{% url admin:index %}">Admin panel</a></li>
 							{% endif %}
 							<li class="divider"></li>
-							<li><a href="{% url apps.auth.views.logout %}">Logout</a></li>
+							<li><a href="{% url auth_logout %}">Logout</a></li>
 						</ul>
 					</li>
 				</ul>
 				{% else %}
 				<ul class="nav pull-right">
-					<li {% block nav_login %}{% endblock %} ><a href="{% url apps.auth.views.login %}">Login</a></li>
+					<li {% block nav_login %}{% endblock %} ><a href="{% url auth_login %}">Login</a></li>
 				</ul>
 				<ul class="nav pull-right">
-					<li {% block nav_register %}{% endblock %} ><a href="{% url apps.auth.views.register %}">Register</a></li>
+					<li {% block nav_register %}{% endblock %} ><a href="{% url auth_register %}">Register</a></li>
 				</ul>
 				{% endif %}
 			</div>

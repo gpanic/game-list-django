@@ -31,13 +31,13 @@ def register(request):
 						user.save()
 						glist = List(user=user)
 						glist.save()
-						return redirect(reverse('home.index'), context_instance=RequestContext(request))
+						return redirect(reverse('home_index'), context_instance=RequestContext(request))
 				else:
 					messages.error(request, 'Passwords do not match.')		
 		else:
 			form = RegistrationForm()
 	else:
-		return redirect('home.index')
+		return redirect('home_index')
 	return render_to_response(
 		'auth/register.html',
 		{ 'form': form, },
@@ -56,7 +56,7 @@ def login(request):
 					if user.is_active:
 						django_login(request, user)
 						if request.POST.get('next', 'None') == 'None':
-							return redirect(reverse('home.index'), context_instance=RequestContext(request))
+							return redirect(reverse('home_index'), context_instance=RequestContext(request))
 						else:
 							return redirect(request.POST.get('next'), context_instance=RequestContext(request))
 					else:
@@ -66,7 +66,7 @@ def login(request):
 		else:
 			form = LoginForm()
 	else:
-		return redirect(reverse('home.index'), context_instance=RequestContext(request))
+		return redirect(reverse('home_index'), context_instance=RequestContext(request))
 	return render_to_response(
 		'auth/login.html',
 		{'form': form, 'next':request.GET.get('next', 'None')},
@@ -75,4 +75,4 @@ def login(request):
 
 def logout(request):
 	django_logout(request)
-	return redirect(reverse('home.index'), context_instance=RequestContext(request))
+	return redirect(reverse('home_index'), context_instance=RequestContext(request))

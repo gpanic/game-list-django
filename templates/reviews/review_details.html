@@ -5,8 +5,8 @@
 	<h1>
 		{{ review.game.title }} Review
 		{% if review.author == user %}
-		<small><a href="{% url apps.reviews.views.edit review.id %}" class="icon-pencil"></a></small>
-		<small><a href="{% url apps.reviews.views.remove review.id %}" class="icon-remove"></a></small>
+		<small><a href="{% url reviews_review_update review.id %}" class="icon-pencil"></a></small>
+		<small><a href="{% url reviews_review_delete review.id %}" class="icon-remove"></a></small>
 		{% endif %}
 	</h1>
 </div>
@@ -35,5 +35,5 @@
 <div class="well">
 {{ review.content }}
 </div>
-<a href="{% url reviews.index %}">Back to list</a>
+<a href="{% url reviews_review_index %}">Back to list</a>
 {% endblock %}
