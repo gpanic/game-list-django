@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^games/', include('apps.games.urls')),
     url(r'^lists/', include('apps.lists.urls')),
     url(r'^reviews/', include('apps.reviews.urls')),
+    url(r'^recommendations/', include('apps.recs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     # Examples:

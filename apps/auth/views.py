@@ -33,11 +33,12 @@ def register(request):
 						glist.save()
 						return redirect(reverse('home_index'), context_instance=RequestContext(request))
 				else:
-					messages.error(request, 'Passwords do not match.')		
+					messages.error(request, 'Passwords do not match.')
 		else:
 			form = RegistrationForm()
 	else:
-		return redirect('home_index')
+		return redirect(reverse('home_index'), context_instance=RequestContext(request))
+
 	return render_to_response(
 		'auth/register.html',
 		{ 'form': form, },

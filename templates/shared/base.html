@@ -21,6 +21,9 @@
 				<ul class="nav">
 					<li {% block nav_reviews %}{% endblock %} ><a href="{% url reviews_review_index %}">Reviews</a></li>
 				</ul>
+				<ul class="nav">
+					<li {% block nav_recs %}{% endblock %} ><a href="{% url recs_userrec_index %}">Recommendations</a></li>
+				</ul>
 				{% if user.is_authenticated %}
 				<ul class="nav pull-right">
 					<li class="dropdown">

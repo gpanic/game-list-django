@@ -8,6 +8,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
+			<th style="width:15px;"></th>
 			<th>Game</th>
 			<th>Author</th>
 			<th>Created</th>
@@ -18,7 +19,8 @@
 	<tbody>
 {% for review in review_list %}
 		<tr>
-			<td><a href="{% url reviews_review_details review.id %}">{{ review.game.title }}</a></td>
+			<td><a class="icon-info-sign" href="{% url reviews_review_details review.id %}"></a></td>
+			<td>{{ review.game.title }}</td>
 			<td>{{ review.author.username }}</td>
 			<td>{{ review.date_created }}</td>
 			<td>{{ review.rating }}</td>
