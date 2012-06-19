@@ -1,0 +1,30 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;My Recommendations{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>My Recommendations</h1>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th style="width:15px;"></th>
+			<th>If you liked</th>
+			<th>You might like</th>
+			<th>Author</th>
+			<th>Content</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for rec in userrec_list %}
+		<tr>
+			<td><a class="icon-info-sign" href="{% url recs_userrec_details rec.id %}"></a></td>
+			<td>{{ rec.game1.title }}</a></td>
+			<td>{{ rec.game2.title }}</a></td>
+			<td>{{ rec.author.username }}</a></td>
+			<td>{{ rec.content|truncatechars:10 }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+<a href="{% url recs_userrec_create %}">Make a recommendation</a>
+{% endblock %}

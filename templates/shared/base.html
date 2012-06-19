@@ -32,6 +32,7 @@
 							<li><a href="#">My Profile</a></li>
 							<li><a href="{% url lists_list_details user.username %}">My List</a></li>
 							<li><a href="{% url reviews_review_index_for_user user.username %}">My Reviews</a></li>
+							<li><a href="{% url recs_userrec_index_for_user user.username %}">My Recommendations</a></li>
 							{% if user.is_staff %}
 							<li class="divider"></li>
 							<li><a href="{% url admin:index %}">Admin panel</a></li>

@@ -5,10 +5,22 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.http import Http404
+from django.contrib.auth.models import User
 
 from apps.games.models import Game
-from apps.recs.forms import UserRecForm
+from apps.recs.forms import UserRecForm, UserRecUpdateForm
 from apps.recs.models import UserRec
+
+@login_required
+def userrec_index_for_user(request, username):
+	userrec_list = User.objects.get(username=username).userrec_set.all()
+
+	return render_to_response(
+		'profiles/userrec_index_for_user.html',
+		{ 'userrec_list': userrec_list, },
+		context_instance=RequestContext(request)
+	)
 
 @login_required
 def userrec_create(request):
@@ -26,7 +38,7 @@ def userrec_create(request):
 				for userrec in userrec_set:
 					game1_set.append(userrec.game1)
 					game2_set.append(userrec.game2)
-				if not ((game1 in game1_set and game2 in game2_set) or (game1 in game2_set and game2 in game1_set)):
+				if not ((game1 in game1_set and game2 in game2_set) or not (game1 in game2_set and game2 in game1_set)):
 					form.save()
 					return redirect(reverse('recs_userrec_index'), context_instance=RequestContext(request))
 				else:
@@ -41,3 +53,32 @@ def userrec_create(request):
 		{ 'form': form, },
 		context_instance=RequestContext(request)
 	)
+
+@login_required
+def userrec_update(request, userrec_id):
+	userrec = get_object_or_404(UserRec, pk=userrec_id)
+	if request.user == userrec.author:
+		if request.method == 'POST':
+			form = UserRecUpdateForm(request.POST, instance=userrec)
+			if form.is_valid():
+				form.save()
+				messages.success(request, 'Entry updated.')
+		else:
+			form = UserRecUpdateForm(instance=userrec)
+	else:
+		raise Http404
+
+	return render_to_response(
+		'recs/userrec_edit.html',
+		{ 'form': form, },
+		context_instance=RequestContext(request)
+	)
+
+@login_required
+def userrec_delete(request, userrec_id):
+	userrec = get_object_or_404(UserRec, pk=userrec_id)
+	if request.user == userrec.author:
+		userrec.delete()
+	else:
+		raise Http404
+	return redirect(reverse('recs_userrec_index'), context_instance=RequestContext(request))

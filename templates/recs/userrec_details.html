@@ -5,8 +5,8 @@
 	<h1>
 		User Recommendation
 		{% if userrec.author == user %}
-		<small><a href="" class="icon-pencil"></a></small>
-		<small><a href="" class="icon-remove"></a></small>
+		<small><a href="{% url recs_userrec_update userrec.id %}" class="icon-pencil"></a></small>
+		<small><a href="{% url recs_userrec_delete userrec.id %}" class="icon-remove"></a></small>
 		{% endif %}
 	</h1>
 </div>

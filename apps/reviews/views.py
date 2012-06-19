@@ -16,7 +16,7 @@ def review_index_for_user(request, username):
 	review_list = User.objects.get(username=username).review_set.all()
 
 	return render_to_response(
-		'reviews/review_index_for_user.html',
+		'profiles/review_index_for_user.html',
 		{ 'review_list': review_list, },
 		context_instance=RequestContext(request)
 	)

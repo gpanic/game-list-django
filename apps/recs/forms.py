@@ -12,3 +12,15 @@ class UserRecForm(forms.ModelForm):
 		widgets = {
 			'content': Textarea(attrs={'class': 'span6', 'rows': 10})
 		}
+
+class UserRecUpdateForm(forms.ModelForm):
+	class Meta:
+		model = UserRec
+		exclude = (
+			'author',
+			'game1',
+			'game2',
+		)
+		widgets = {
+			'content': Textarea(attrs={'class': 'span6', 'rows': 10})
+		}
