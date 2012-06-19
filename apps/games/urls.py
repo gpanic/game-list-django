@@ -10,10 +10,5 @@ urlpatterns = patterns('',
 			template_name='games/game_index.html'),
 		name='games_game_index',
 	),
-	url(r'^(?P<pk>\d+)/$',
-		DetailView.as_view(
-			model=Game,
-			template_name='games/game_details.html'),
-		name='games_game_details',
-	),
+	url(r'^(?P<game_id>\d+)/$', 'apps.games.views.game_details', name='games_game_details'),
 )

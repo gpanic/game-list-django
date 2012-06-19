@@ -51,6 +51,28 @@
 		<div class="span5 well">No reviews yet.</div>
 		{% endif %}
 	</div>
+	<div class="span6">
+		<h2>Reviews</h2><br />
+		{% if related_userrecs %}
+		{% for userrec in related_userrecs %}
+		<div class="span5 well">
+			<p>
+			<strong>If you liked</strong> {{ game }}<br />
+			<strong>You might like</strong> 
+			{% if userrec.game1 == game %}
+			{{ userrec.game2 }}
+			{% else %}
+			{{ userrec.game1 }}
+			{% endif %}
+			</p>
+			{{ userrec.content|truncatechars:300 }}
+			<h5><small>by {{ userrec.author }}</small></h5>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="span5 well">No recommendations yet.</div>
+		{% endif %}
+	</div>
 </div>
 <a href="{% url games_game_index %}">Back to list</a>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render_to_response
@@ -12,7 +13,9 @@ from apps.recs.models import UserRec
 @login_required
 def userrec_create(request):
 	if request.method == 'POST':
-		form = UserRecForm(request.POST)
+		userrec = UserRec()
+		userrec.author = request.user
+		form = UserRecForm(request.POST, instance=userrec)
 		if form.is_valid():
 			game1 = form.cleaned_data['game1']
 			game2 = form.cleaned_data['game2']
@@ -25,7 +28,7 @@ def userrec_create(request):
 					game2_set.append(userrec.game2)
 				if not ((game1 in game1_set and game2 in game2_set) or (game1 in game2_set and game2 in game1_set)):
 					form.save()
-					return redirect('home_index', context_instance=RequestContext(request))
+					return redirect(reverse('recs_userrec_index'), context_instance=RequestContext(request))
 				else:
 					messages.error(request, 'You already made this recommendation, choose different games.')
 			else:
