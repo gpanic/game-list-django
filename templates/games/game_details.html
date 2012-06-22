@@ -52,7 +52,7 @@
 		{% endif %}
 	</div>
 	<div class="span6">
-		<h2>Reviews</h2><br />
+		<h2>Recommendations</h2><br />
 		{% if related_userrecs %}
 		{% for userrec in related_userrecs %}
 		<div class="span5 well">
@@ -65,7 +65,7 @@
 			{{ userrec.game1 }}
 			{% endif %}
 			</p>
-			{{ userrec.content|truncatechars:300 }}
+			<a style="color:#333;" href="{% url recs_userrec_details userrec.id %}">{{ userrec.content|truncatechars:300 }}</a>
 			<h5><small>by {{ userrec.author }}</small></h5>
 		</div>
 		{% endfor %}

@@ -1,0 +1,115 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ user_profile.username }}'s Profile{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>{{ user_profile.username }}'s Profile
+		{% if user == user_profile %}
+		<small><a href="{% url profiles_user_update user.username %}" class="icon-pencil"></a></small>
+		{% endif %}
+	</h1>
+</div>
+<div class="row">
+	<div class="span2">
+		Le profile pic
+	</div>
+	<div class="span10">
+		<h3>Details</h3>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th style="width:200px;">Username</th>
+					<td>{{ user_profile.username }}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>E-mail</th>
+					<td>{{ user_profile.email }}</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td>{{ user_profile.first_name }}&nbsp;{{ user_profile.last_name }}</td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+					<td>{{ user_profile.get_profile.get_gender_display }}</td>
+				</tr>
+				<tr>
+					<th>Birthday</th>
+					<td>{{ user_profile.get_profile.birthday }}</td>
+				</tr>
+				<tr>
+					<th>Website</th>
+					<td>{{ user_profile.get_profile.website }}</td>
+				</tr>
+				<tr>
+					<th>Joined</th>
+					<td>{{ user_profile.date_joined|date:"F j, Y, H:i" }}</td>
+				</tr>
+				<tr>
+					<th>Last activity</th>
+					<td>{{ user_profile.last_login|date:"F j, Y, H:i" }}</td>
+				</tr>
+				<tr>
+					<th>About</th>
+					<td>{{ user_profile.get_profile.about }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="span10 offset2">
+		<h3>Statistics</h3>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th style="width:200px;">Reviews</th>
+					<td>{{ user_profile.review_set.all|length }}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Recommendations</th>
+					<td>{{ user_profile.userrec_set.all|length }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="span6">
+		<h3>Latest reviews</h3></br>
+		{% if reviews %}
+		{% for review in reviews %}
+		<div class="span5 well">
+			<h4>{{ review.author.username}}
+				<small>on {{ review.date_created }}</small>
+			</h4>
+			<i>Rating: {{ review.rating }}</i></br>
+			<i><a style="color:#333;"href="{% url reviews_review_details review.id %}">{{ review.content|truncatechars:300}}</a></i>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="span5 well">No reviews yet.</div>
+		{% endif %}
+	</div>
+	<div class="span6">
+		<h3>Latest recommendations</h3></br>
+		{% if userrecs %}
+		{% for userrec in userrecs %}
+		<div class="span5 well">
+			<p>
+			<strong>If you liked</strong> {{ userrec.game1 }}<br />
+			<strong>You might like</strong> {{ userrec.game2 }}
+			</p>
+			<a style="color:#333;" href="{% url recs_userrec_details userrec.id %}">{{ userrec.content|truncatechars:300 }}</a>
+			<h5><small>by {{ userrec.author }}</small></h5>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="span5 well">No recommendations yet.</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

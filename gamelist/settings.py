@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'apps.lists',
     'apps.reviews',
     'apps.recs',
+    'apps.profiles',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -163,6 +164,6 @@ LOGGING = {
     }
 }
 
-AUTH_PROFILE_MODULE = 'apps.auth.UserProfile'
+AUTH_PROFILE_MODULE = 'auth.UserProfile'
 
 LOGIN_URL = '/login'

@@ -1,0 +1,49 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Edit Profile{% endblock %}
+{% block content %}
+{% if messages %}
+<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">x</button>
+	<h4 class="alert-heading">Success!</h4>
+	<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
+<form class="form-horizontal" action="{% url profiles_user_update user.username %}" method="post">
+	{% csrf_token %}
+	<fieldset>
+		<legend>Edit Profile</legend>
+		<div class="control-group">
+			<label class="control-label">Username</label>
+			<div class="controls">
+				<span class="input-large uneditable-input">{{ user.username  }}</span>
+			</div>
+		</div>
+		{% for field in form.visible_fields %}
+		{% if field.errors %}
+		<div class="control-group error">
+		{% else %}
+		<div class="control-group">
+		{% endif %}
+			<label class="control-label" for="id_{{ field.html_name }}">{{ field.label }}</label>
+			<div class="controls">
+				{{ field }}
+				{% if field.errors %}
+				<span class="help-inline">{{ field.errors|striptags }}</span>
+				{% endif %}
+				{% if field.html_name == 'birthday'%}
+				<p class="help-block"><small>Format: 2006-10-25</small></p>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Save changes</button>
+			<a class="btn" href="{% url profiles_user_details user.username %}">Cancel</a>
+		</div>
+	</fieldset>
+</form>
+{% endblock %}
