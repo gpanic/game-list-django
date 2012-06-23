@@ -1,0 +1,64 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "gregor",
+            "first_name": "Gregor",
+            "last_name": "Panič",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-06-23T10:41:18.900Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$Qt3ocu5RUuh7$vNPmaFdb2VFDSiZEvanV6QFPLNC9rR+UofmnzlYOrSE=",
+            "email": "gregor.panic@gmail.com",
+            "date_joined": "2012-06-23T10:39:17.930Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "user",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-23T10:40:31.320Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$NXm7tE9aGdwm$5H76DpNsKy+mJVUz9OEnYAaeD9Fg598GHARyqdSvByM=",
+            "email": "user@user.com",
+            "date_joined": "2012-06-23T10:40:25.616Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "http://www.gamelist.me/",
+            "about": "Website Admin",
+            "gender": 1,
+            "gravatar_email": "",
+            "birthday": "1990-04-02",
+            "location": "Slovenia",
+            "user": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "gender": 0,
+            "gravatar_email": "",
+            "birthday": null,
+            "location": "",
+            "user": 2
+        }
+    }
+]

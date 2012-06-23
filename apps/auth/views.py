@@ -13,7 +13,6 @@ from django.core.urlresolvers import reverse
 from apps.auth.forms import LoginForm
 from apps.auth.forms import RegistrationForm
 from apps.auth.models import UserProfile
-from apps.lists.models import List
 
 def register(request):
 	if not request.user.is_authenticated():
@@ -31,8 +30,6 @@ def register(request):
 						user = User.objects.create_user(username, email, password)
 						user.get_profile().gravatar = email
 						user.save()
-						glist = List(user=user)
-						glist.save()
 						return redirect(reverse('home_index'), context_instance=RequestContext(request))
 				else:
 					messages.error(request, 'Passwords do not match.')

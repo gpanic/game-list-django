@@ -7,7 +7,7 @@ from apps.reviews.models import Review
 urlpatterns = patterns('apps.reviews.views',
 	url(r'^$',
 		ListView.as_view(
-			queryset=Review.objects.all(),
+			queryset=Review.objects.order_by('-date_created'),
 			template_name='reviews/review_index.html',
 		),
 		name='reviews_review_index',

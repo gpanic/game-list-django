@@ -31,14 +31,21 @@ def userrec_create(request):
 		if form.is_valid():
 			game1 = form.cleaned_data['game1']
 			game2 = form.cleaned_data['game2']
+			print game1
+			print game2
 			if game1 != game2:
 				game1_set = []
 				game2_set = []
 				userrec_set = request.user.userrec_set.all()
+				print userrec_set
 				for userrec in userrec_set:
 					game1_set.append(userrec.game1)
 					game2_set.append(userrec.game2)
-				if not ((game1 in game1_set and game2 in game2_set) or not (game1 in game2_set and game2 in game1_set)):
+				if  game1 in game1_set and game2 in game2_set:
+					print True
+				else:
+					print False
+				if not ((game1 in game1_set and game2 in game2_set) or (game1 in game2_set and game2 in game1_set)):
 					form.save()
 					return redirect(reverse('recs_userrec_index'), context_instance=RequestContext(request))
 				else:

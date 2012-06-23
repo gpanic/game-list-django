@@ -6,7 +6,7 @@ from apps.recs.models import UserRec
 urlpatterns = patterns('apps.recs.views',
 	url(r'^$',
 		ListView.as_view(
-			queryset=UserRec.objects.all(),
+			queryset=UserRec.objects.order_by('-date_created'),
 			template_name='recs/userrec_index.html',
 		),
 		name='recs_userrec_index',

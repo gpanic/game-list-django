@@ -24,7 +24,7 @@
 		{% for item in list.listitem_set.all %}
 		<tr>
 			<td>{{ item.game.title }}</td>
-			<td>{{ item.game.platform }}</td>
+			<td>{{ item.game.get_platforms }}</td>
 			<td>{{ item.game.genre }}</td>
 			<td>{{ item.get_status_display }}</td>
 			<td>{{ item.rating }}</td>

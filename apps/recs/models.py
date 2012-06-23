@@ -9,7 +9,7 @@ class UserRec(models.Model):
 	game2 = models.ForeignKey(Game, related_name='userrec_game2', verbose_name=u'Game 2')
 
 	content = models.TextField()
-	date_created = models.DateField(auto_now_add=True, verbose_name=u'Created')
+	date_created = models.DateTimeField(auto_now_add=True, verbose_name=u'Created')
 
 	def __unicode__(self):
 		return 'UserRec {} {} {}'.format(self.author, self.game1.title, self.game2.title)

@@ -12,6 +12,7 @@
 			<th>If you liked</th>
 			<th>You might like</th>
 			<th>Author</th>
+			<th>Created</th>
 			<th>Content</th>
 		</tr>
 	</thead>
@@ -22,6 +23,7 @@
 			<td>{{ rec.game1.title }}</a></td>
 			<td>{{ rec.game2.title }}</a></td>
 			<td>{{ rec.author.username }}</a></td>
+			<td>{{ rec.date_created|date:"F j, Y, H:i" }}</td>
 			<td>{{ rec.content|truncatechars:10 }}</td>
 		</tr>
 {% endfor %}

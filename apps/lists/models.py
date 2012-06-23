@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms.extras.widgets import SelectDateWidget
+from django.db.models.signals import post_save
 
 from apps.games.models import Game
 from apps.games.models import RATING
@@ -38,3 +39,9 @@ class ListItem(models.Model):
 
 	class Meta:
 		unique_together = ('game_list', 'game')
+
+def create_list(sender, instance, created, **kwargs):
+	if created:
+		List.objects.create(user=instance)
+
+post_save.connect(create_list, sender=User)

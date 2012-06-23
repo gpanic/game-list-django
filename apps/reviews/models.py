@@ -8,7 +8,7 @@ class Review(models.Model):
 	author = models.ForeignKey(User)
 	game = models.ForeignKey(Game)
 
-	date_created = models.DateField(auto_now_add=True, verbose_name=u'Created')
+	date_created = models.DateTimeField(auto_now_add=True, verbose_name=u'Created')
 	rating = models.PositiveSmallIntegerField(choices=RATING)
 	content = models.TextField()
 

@@ -22,7 +22,7 @@
 			<td><a class="icon-info-sign" href="{% url reviews_review_details review.id %}"></a></td>
 			<td>{{ review.game.title }}</td>
 			<td>{{ review.author.username }}</td>
-			<td>{{ review.date_created }}</td>
+			<td>{{ review.date_created|date:"F j, Y, H:i" }}</td>
 			<td>{{ review.rating }}</td>
 			<td>{{ review.content|truncatechars:10 }}</td>
 		</tr>
