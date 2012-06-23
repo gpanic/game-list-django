@@ -15,11 +15,11 @@ class UserProfile(models.Model):
 	location = models.CharField(max_length=100, blank=True)
 	gender = models.PositiveSmallIntegerField(choices=GENDER, blank=True, default=0)
 	birthday = models.DateField(null=True, blank=True)
-	website = models.CharField(max_length=100, blank=True)
+	website = models.URLField(max_length=100, blank=True)
 	about = models.TextField(blank=True)
 
 def create_user_profile(sender, instance, created, **kwargs):
 	if created:
-		UserProfile.objects.create(user=instance)
+		UserProfile.objects.create(user=instance,gravatar_email=instance.email)
 
 post_save.connect(create_user_profile, sender=User)

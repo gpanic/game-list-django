@@ -1,0 +1,21 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ company.name }}{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>{{ company.name }}</h1>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<td>{{ company.name }}</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Website</th>
+			<td>{{ company.website|urlize }}</td>
+		</tr>
+	</tbody>
+</table>
+{% endblock %}

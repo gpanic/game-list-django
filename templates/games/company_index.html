@@ -1,0 +1,26 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Companies{% endblock %}
+{% block nav_companies %}class="dropdown active"{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>Companies</h1>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Website</th>
+			<th>Games Released</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for company in company_list %}
+		<tr>
+			<td><a href="{% url games_company_details company.id %}">{{ company.name }}</a></td>
+			<td>{{ company.website|urlize }}</td>
+			<td>{{ company.games_released }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

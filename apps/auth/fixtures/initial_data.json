@@ -9,7 +9,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2012-06-23T10:41:18.900Z",
+            "last_login": "2012-06-23T11:17:43.943Z",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$Qt3ocu5RUuh7$vNPmaFdb2VFDSiZEvanV6QFPLNC9rR+UofmnzlYOrSE=",
@@ -27,12 +27,12 @@
             "is_active": true,
             "is_superuser": false,
             "is_staff": false,
-            "last_login": "2012-06-23T10:40:31.320Z",
+            "last_login": "2012-06-23T11:15:34Z",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$NXm7tE9aGdwm$5H76DpNsKy+mJVUz9OEnYAaeD9Fg598GHARyqdSvByM=",
             "email": "user@user.com",
-            "date_joined": "2012-06-23T10:40:25.616Z"
+            "date_joined": "2012-06-23T10:40:25Z"
         }
     },
     {
@@ -42,7 +42,7 @@
             "website": "http://www.gamelist.me/",
             "about": "Website Admin",
             "gender": 1,
-            "gravatar_email": "",
+            "gravatar_email": "gregor.panic@gmail.com",
             "birthday": "1990-04-02",
             "location": "Slovenia",
             "user": 1
@@ -55,7 +55,7 @@
             "website": "",
             "about": "",
             "gender": 0,
-            "gravatar_email": "",
+            "gravatar_email": "user@user.com",
             "birthday": null,
             "location": "",
             "user": 2

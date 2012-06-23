@@ -1,8 +1,8 @@
 {% extends "shared/base.html" %}
-{% block title %}{{ block.super }}&nbsp;|&nbsp;My Reviews{% endblock %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ user.username }}'s Reviews{% endblock %}
 {% block content %}
 <div class="page-header">
-	<h1>My Reviews</h1>
+	<h1>{{ user.username }}'s Reviews</h1>
 </div>
 <table class="table table-bordered table-striped">
 	<thead>
@@ -19,8 +19,8 @@
 {% for review in review_list %}
 		<tr>
 			<td><a class="icon-info-sign" href="{% url reviews_review_details review.id %}"></a></td>
-			<td>{{ review.game.title }}</td>
-			<td>{{ review.author.username }}</td>
+			<td><a href="{% url games_game_details review.game.id %}">{{ review.game.title }}<a/></td>
+			<td><a href="{% url profiles_user_details user.username %}">{{ review.author.username }}<a/></td>
 			<td>{{ review.date_created }}</td>
 			<td>{{ review.rating }}</td>
 			<td>{{ review.content|truncatechars:10 }}</td>

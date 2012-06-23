@@ -20,8 +20,8 @@
 {% for review in review_list %}
 		<tr>
 			<td><a class="icon-info-sign" href="{% url reviews_review_details review.id %}"></a></td>
-			<td>{{ review.game.title }}</td>
-			<td>{{ review.author.username }}</td>
+			<td><a href="{% url games_game_details review.game.id %}">{{ review.game.title }}</a></td>
+			<td><a href="{% url profiles_user_details review.author.username %}">{{ review.author.username }}</a></td>
 			<td>{{ review.date_created|date:"F j, Y, H:i" }}</td>
 			<td>{{ review.rating }}</td>
 			<td>{{ review.content|truncatechars:10 }}</td>

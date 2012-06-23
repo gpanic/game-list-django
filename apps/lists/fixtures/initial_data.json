@@ -1,1 +1,50 @@
-[{"pk": 1, "model": "lists.list", "fields": {"user": 1}}, {"pk": 2, "model": "lists.list", "fields": {"user": 2}}, {"pk": 1, "model": "lists.listitem", "fields": {"status": 1, "rating": 10, "times_finished": 1, "notes": "Epic.", "date_start": "2010-10-10", "game_list": 1, "money_spent": "50", "time_playthrough": 20, "time_spent": 20, "date_finish": "2011-10-10", "game": 1}}, {"pk": 2, "model": "lists.listitem", "fields": {"status": 2, "rating": 10, "times_finished": 1, "notes": "Not bad.", "date_start": "2010-10-10", "game_list": 1, "money_spent": "20", "time_playthrough": 30, "time_spent": 30, "date_finish": "2012-10-10", "game": 2}}]
+[
+    {
+        "pk": 1,
+        "model": "lists.list",
+        "fields": {
+            "user": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "lists.list",
+        "fields": {
+            "user": 2
+        }
+    },
+    {
+        "pk": 1,
+        "model": "lists.listitem",
+        "fields": {
+            "status": 1,
+            "rating": 10,
+            "times_finished": 1,
+            "notes": "",
+            "date_start": "2006-10-25",
+            "game_list": 1,
+            "money_spent": "50",
+            "time_playthrough": 20,
+            "time_spent": 20,
+            "date_finish": "2006-10-25",
+            "game": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "lists.listitem",
+        "fields": {
+            "status": 2,
+            "rating": 10,
+            "times_finished": 1,
+            "notes": "",
+            "date_start": "2006-10-25",
+            "game_list": 1,
+            "money_spent": "25",
+            "time_playthrough": 30,
+            "time_spent": 30,
+            "date_finish": "2006-10-25",
+            "game": 2
+        }
+    }
+]

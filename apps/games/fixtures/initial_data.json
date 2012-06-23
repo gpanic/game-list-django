@@ -47,55 +47,53 @@
         "pk": 5,
         "model": "games.platform",
         "fields": {
-            "name": "3DS"
+            "name": "PS Vita"
         }
     },
     {
         "pk": 6,
         "model": "games.platform",
         "fields": {
-            "name": "PS Vita"
+            "name": "3DS"
         }
     },
     {
         "pk": 1,
-        "model": "games.publisher",
+        "model": "games.company",
         "fields": {
+            "website": "http://www.blizzard.com/",
             "name": "Blizzard Entertainment"
         }
     },
     {
         "pk": 2,
-        "model": "games.publisher",
+        "model": "games.company",
         "fields": {
+            "website": "http://www.konami.com/",
             "name": "Konami"
         }
     },
     {
         "pk": 3,
-        "model": "games.publisher",
+        "model": "games.company",
         "fields": {
-            "name": "Square Enix"
-        }
-    },
-    {
-        "pk": 1,
-        "model": "games.developer",
-        "fields": {
-            "name": "Blizzard Entertainment"
-        }
-    },
-    {
-        "pk": 2,
-        "model": "games.developer",
-        "fields": {
+            "website": "http://www.konami.jp/kojima_pro/",
             "name": "Kojima Productions"
         }
     },
     {
-        "pk": 3,
-        "model": "games.developer",
+        "pk": 4,
+        "model": "games.company",
         "fields": {
+            "website": "http://www.square-enix.com/",
+            "name": "Square Enix"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.eidosmontreal.com/",
             "name": "Eidos Montreal"
         }
     },
@@ -132,7 +130,7 @@
         "model": "games.game",
         "fields": {
             "publisher": 1,
-            "title": "StarCraft II: Wings of Liberty",
+            "title": "Starcraft II: Wings of Liberty",
             "release_date": "2010-07-27",
             "tags": [
                 1
@@ -160,18 +158,17 @@
                 4
             ],
             "genre": 2,
-            "developer": 2
+            "developer": 3
         }
     },
     {
         "pk": 3,
         "model": "games.game",
         "fields": {
-            "publisher": 3,
+            "publisher": 4,
             "title": "Deus Ex: Human Revolution",
-            "release_date": "2011-08-11",
+            "release_date": "2011-08-23",
             "tags": [
-                1,
                 4
             ],
             "summary": "In Deus Ex: Human Revolution you play Adam Jensen, a security specialist, handpicked to oversee the defense of one of America's most experimental biotechnology firms. But when a black ops team breaks in and kills the scientists you were hired to protect, everything you thought you knew about your job changes. At a time when scientific advancements are routinely turning athletes, soldiers and spies into super-enhanced beings, someone is working very hard to ensure mankind's evolution follows a particular path. You need to discover why - because the decisions you take and the choices you make will be the only things that can determine mankind's future.",
@@ -181,7 +178,7 @@
                 4
             ],
             "genre": 2,
-            "developer": 3
+            "developer": 5
         }
     }
 ]

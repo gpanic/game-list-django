@@ -20,9 +20,9 @@
 {% for rec in userrec_list %}
 		<tr>
 			<td><a class="icon-info-sign" href="{% url recs_userrec_details rec.id %}"></a></td>
-			<td>{{ rec.game1.title }}</a></td>
-			<td>{{ rec.game2.title }}</a></td>
-			<td>{{ rec.author.username }}</a></td>
+			<td><a href="{% url games_game_details rec.game1.id %}">{{ rec.game1.title }}</a></td>
+			<td><a href="{% url games_game_details rec.game2.id %}">{{ rec.game2.title }}</a></td>
+			<td><a href="{% url profiles_user_details rec.author.username %}">{{ rec.author.username }}</a></td>
 			<td>{{ rec.date_created|date:"F j, Y, H:i" }}</td>
 			<td>{{ rec.content|truncatechars:10 }}</td>
 		</tr>

@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 
-from apps.games.models import Game
+from apps.games.models import Game, Company
 
 def game_details(request, game_id):
 	game = get_object_or_404(Game, pk=game_id)
@@ -15,6 +15,17 @@ def game_details(request, game_id):
 		{
 			'game': game,
 			'related_userrecs': related_userrecs,
+		},
+		context_instance=RequestContext(request)
+	)
+
+def company_details(request, company_id):
+	company = get_object_or_404(Company, pk=company_id)
+
+	return render_to_response(
+		'games/company_details.html',
+		{
+			'company': company,
 		},
 		context_instance=RequestContext(request)
 	)

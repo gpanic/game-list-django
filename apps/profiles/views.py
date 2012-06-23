@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import Http404
+from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from hashlib import md5
@@ -9,11 +10,11 @@ from hashlib import md5
 from apps.profiles.forms import UserUpdateForm
 
 def user_details(request, username):
-	user = User.objects.get(username=username)
+	user = get_object_or_404(User, username=username)
 
 	reviews = user.review_set.order_by('-date_created')[:5]
 	userrecs = user.userrec_set.order_by('-date_created')[:5]
-	gravatar_url = "http://www.gravatar.com/avatar/" + md5(user.email.lower()).hexdigest() + '?s=150'
+	gravatar_url = "http://www.gravatar.com/avatar/" + md5(user.email.strip().lower()).hexdigest() + '?s=150'
 
 	return render_to_response(
 		'profiles/user_details.html',
@@ -34,6 +35,7 @@ def user_update(request, username):
 			form = UserUpdateForm(request.POST)
 			if form.is_valid():
 				user.email = form.data['email']
+				user.get_profile().gravatar_email = form.data['gravatar_email']
 				user.first_name = form.data['first_name']
 				user.last_name = form.data['last_name']
 				user.get_profile().location = form.data['location']
@@ -48,6 +50,7 @@ def user_update(request, username):
 		else:
 			initial = {
 				'email': user.email,
+				'gravatar_email': user.get_profile().gravatar_email,
 				'first_name': user.first_name,
 				'last_name': user.last_name,
 				'location': user.get_profile().location,

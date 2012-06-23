@@ -13,32 +13,57 @@
 			<div class="container">
 				<a class="brand" href="{% url home_index %}">Game List</a>
 				<ul class="nav">
-					<li {% block nav_home %}{% endblock %} ><a href="{% url home_index %}">Home</a></li>
+					<li {% block nav_home %}{% endblock %} >
+						<a href="{% url home_index %}">Home</a>
+					</li>
 				</ul>
 				<ul class="nav">
-					<li {% block nav_games %}{% endblock %} ><a href="{% url games_game_index %}">Games</a></li>
+					<li {% block nav_games %}{% endblock %} >
+						<a href="{% url games_game_index %}">Games</a>
+					</li>
 				</ul>
 				<ul class="nav">
-					<li {% block nav_reviews %}{% endblock %} ><a href="{% url reviews_review_index %}">Reviews</a></li>
+					<li {% block nav_companies %}{% endblock %} >
+						<a href="{% url games_company_index %}">Companies</a>
+					</li>
 				</ul>
 				<ul class="nav">
-					<li {% block nav_recs %}{% endblock %} ><a href="{% url recs_userrec_index %}">Recommendations</a></li>
+					<li {% block nav_reviews %}{% endblock %} >
+						<a href="{% url reviews_review_index %}">Reviews</a>
+					</li>
+				</ul>
+				<ul class="nav">
+					<li {% block nav_recs %}{% endblock %} >
+						<a href="{% url recs_userrec_index %}">Recommendations</a>
+					</li>
 				</ul>
 				{% if user.is_authenticated %}
 				<ul class="nav pull-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url profiles_user_details user.username %}">My Profile</a></li>
-							<li><a href="{% url lists_list_details user.username %}">My List</a></li>
-							<li><a href="{% url reviews_review_index_for_user user.username %}">My Reviews</a></li>
-							<li><a href="{% url recs_userrec_index_for_user user.username %}">My Recommendations</a></li>
+							<li>
+								<a href="{% url profiles_user_details user.username %}">My Profile</a>
+							</li>
+							<li>
+								<a href="{% url lists_list_details user.username %}">My List</a>
+							</li>
+							<li>
+								<a href="{% url reviews_review_index_for_user user.username %}">My Reviews</a>
+							</li>
+							<li>
+								<a href="{% url recs_userrec_index_for_user user.username %}">My Recommendations</a>
+							</li>
 							{% if user.is_staff %}
 							<li class="divider"></li>
-							<li><a href="{% url admin:index %}">Admin panel</a></li>
+							<li>
+								<a href="{% url admin:index %}">Admin panel</a>
+							</li>
 							{% endif %}
 							<li class="divider"></li>
-							<li><a href="{% url auth_logout %}">Logout</a></li>
+							<li>
+								<a href="{% url auth_logout %}">Logout</a>
+							</li>
 						</ul>
 					</li>
 				</ul>

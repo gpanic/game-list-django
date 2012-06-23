@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.games.models import Genre, Platform, Publisher, Developer, Tag, Game
+from apps.games.models import Genre, Platform, Company, Tag, Game
 
 class GameAdmin(admin.ModelAdmin):
 	list_display=('title', 'get_platforms', 'genre', 'release_date', 'publisher', 'developer',)
@@ -7,7 +7,6 @@ class GameAdmin(admin.ModelAdmin):
 
 admin.site.register(Genre)
 admin.site.register(Platform)
-admin.site.register(Publisher)
-admin.site.register(Developer)
+admin.site.register(Company)
 admin.site.register(Tag)
 admin.site.register(Game, GameAdmin)

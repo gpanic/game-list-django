@@ -26,8 +26,8 @@
 			<td>{{ game.get_platforms }}</td>
 			<td>{{ game.genre }}</td>
 			<td>{{ game.release_date }}</td>
-			<td>{{ game.publisher }}</td>
-			<td>{{ game.developer }}</td>
+			<td><a href="{% url games_company_details game.publisher.id %}">{{ game.publisher }}</a></td>
+			<td><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
 			{% if user.is_authenticated %}
 			<td><a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a></td>
 			{% endif %}

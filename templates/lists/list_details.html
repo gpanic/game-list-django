@@ -23,7 +23,7 @@
 	<tbody>
 		{% for item in list.listitem_set.all %}
 		<tr>
-			<td>{{ item.game.title }}</td>
+			<td><a href="{% url games_game_details item.game.id %}">{{ item.game.title }}<a/></td>
 			<td>{{ item.game.get_platforms }}</td>
 			<td>{{ item.game.genre }}</td>
 			<td>{{ item.get_status_display }}</td>

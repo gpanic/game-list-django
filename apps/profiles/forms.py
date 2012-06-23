@@ -5,6 +5,7 @@ from apps.auth.models import GENDER
 
 class UserUpdateForm(forms.Form):
 	email = forms.EmailField(max_length=75)
+	gravatar_email = forms.EmailField(max_length=75)
 	first_name = forms.CharField(max_length=30, required=False)
 	last_name = forms.CharField(max_length=30, required=False)
 	location = forms.CharField(max_length=100, required=False)
