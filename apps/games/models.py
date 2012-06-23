@@ -50,10 +50,16 @@ class Game(models.Model):
 	summary = models.TextField(blank=True)
 	release_date = models.DateField()
 	genre = models.ForeignKey(Genre)
-	platform = models.ForeignKey(Platform)
 	publisher = models.ForeignKey(Publisher)
 	developer = models.ForeignKey(Developer)
+	platforms = models.ManyToManyField(Platform)
 	tags = models.ManyToManyField(Tag)
 
 	def __unicode__(self):
 		return self.title
+
+	def get_platforms(self):
+		return ', '.join(p.name for p in self.platforms.all())
+
+	def get_tags(self):
+		return ', '.join(t.name for t in self.tags.all())

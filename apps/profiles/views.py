@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.http import Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from hashlib import md5
 
 from apps.profiles.forms import UserUpdateForm
 
@@ -12,6 +13,7 @@ def user_details(request, username):
 
 	reviews = user.review_set.order_by('-date_created')[:5]
 	userrecs = user.userrec_set.order_by('-date_created')[:5]
+	gravatar_url = "http://www.gravatar.com/avatar/" + md5(user.email.lower()).hexdigest() + '?s=150'
 
 	return render_to_response(
 		'profiles/user_details.html',
@@ -19,6 +21,7 @@ def user_details(request, username):
 			'user_profile': user,
 			'reviews': reviews,
 			'userrecs': userrecs,
+			'gravatar_url': gravatar_url,
 		},
 		context_instance=RequestContext(request)
 	)

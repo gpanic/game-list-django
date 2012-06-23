@@ -1,159 +1,187 @@
 [
     {
-        "fields": {
-            "description": "",
-            "name": "RPG"
-        },
+        "pk": 1,
         "model": "games.genre",
-        "pk": 1
+        "fields": {
+            "name": "Strategy",
+            "description": ""
+        }
     },
     {
-        "fields": {
-            "description": "",
-            "name": "FPS"
-        },
+        "pk": 2,
         "model": "games.genre",
-        "pk": 2
+        "fields": {
+            "name": "Action",
+            "description": ""
+        }
     },
     {
-        "fields": {
-            "description": "",
-            "name": "Adventure"
-        },
-        "model": "games.genre",
-        "pk": 3
-    },
-    {
-        "fields": {
-            "name": "PS3"
-        },
+        "pk": 1,
         "model": "games.platform",
-        "pk": 1
-    },
-    {
         "fields": {
             "name": "PC"
-        },
-        "model": "games.platform",
-        "pk": 2
+        }
     },
     {
+        "pk": 2,
+        "model": "games.platform",
+        "fields": {
+            "name": "Wii"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.platform",
         "fields": {
             "name": "Xbox 360"
-        },
+        }
+    },
+    {
+        "pk": 4,
         "model": "games.platform",
-        "pk": 3
+        "fields": {
+            "name": "PS3"
+        }
     },
     {
+        "pk": 5,
+        "model": "games.platform",
         "fields": {
-            "name": "Electronic Arts"
-        },
+            "name": "3DS"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.platform",
+        "fields": {
+            "name": "PS Vita"
+        }
+    },
+    {
+        "pk": 1,
         "model": "games.publisher",
-        "pk": 1
+        "fields": {
+            "name": "Blizzard Entertainment"
+        }
     },
     {
-        "fields": {
-            "name": "Activision"
-        },
+        "pk": 2,
         "model": "games.publisher",
-        "pk": 2
+        "fields": {
+            "name": "Konami"
+        }
     },
     {
-        "fields": {
-            "name": "THQ"
-        },
+        "pk": 3,
         "model": "games.publisher",
-        "pk": 3
+        "fields": {
+            "name": "Square Enix"
+        }
     },
     {
-        "fields": {
-            "name": "Dev1"
-        },
+        "pk": 1,
         "model": "games.developer",
-        "pk": 1
+        "fields": {
+            "name": "Blizzard Entertainment"
+        }
     },
     {
-        "fields": {
-            "name": "Dev2"
-        },
+        "pk": 2,
         "model": "games.developer",
-        "pk": 2
+        "fields": {
+            "name": "Kojima Productions"
+        }
     },
     {
-        "fields": {
-            "name": "Dev3"
-        },
+        "pk": 3,
         "model": "games.developer",
-        "pk": 3
+        "fields": {
+            "name": "Eidos Montreal"
+        }
     },
     {
-        "fields": {
-            "name": "sci-fi"
-        },
+        "pk": 1,
         "model": "games.tag",
-        "pk": 1
+        "fields": {
+            "name": "science fiction"
+        }
     },
     {
+        "pk": 2,
+        "model": "games.tag",
         "fields": {
             "name": "fantasy"
-        },
-        "model": "games.tag",
-        "pk": 2
+        }
     },
     {
-        "fields": {
-            "name": "horror"
-        },
+        "pk": 3,
         "model": "games.tag",
-        "pk": 3
+        "fields": {
+            "name": "stealth"
+        }
     },
     {
+        "pk": 4,
+        "model": "games.tag",
         "fields": {
-            "developer": 1,
-            "genre": 1,
-            "platform": 1,
-            "publisher": 1,
-            "release_date": "2012-06-15",
-            "summary": "asldjasodj asoidjasiod jajdoasd",
-            "tags": [
-                1,
-                2
-            ],
-            "title": "Game1"
-        },
+            "name": "cyberpunk"
+        }
+    },
+    {
+        "pk": 1,
         "model": "games.game",
-        "pk": 1
+        "fields": {
+            "publisher": 1,
+            "title": "StarCraft II: Wings of Liberty",
+            "release_date": "2010-07-27",
+            "tags": [
+                1
+            ],
+            "summary": "StarCraft II continues the epic saga of the Protoss, Terran, and Zerg. These three distinct and powerful races clash once again in the fast-paced real-time strategy sequel to the legendary original, StarCraft. Legions of veteran, upgraded, and brand-new unit types do battle across the galaxy, as each faction struggles for survival. Featuring a unique single-player campaign that picks up where StarCraft: Brood War left off, StarCraft II presents a cast of new heroes and familiar faces in an edgy sci-fi story filled with adventure and intrigue. In addition, Blizzard again offers unparalleled online play through Battle.net, the company's world-renowned gaming service, with several enhancements and new features to make StarCraft II the ultimate competitive real-time strategy game. Features fast-paced, hard-hitting, tightly balanced competitive real-time strategy gameplay that recaptures and improves on the magic of the original game. New units and gameplay mechanics further distinguish each race. Vibrant new 3D-graphics engine with support for dazzling visual effects and massive unit and army sizes. Full map-making and scripting tools to give players incredible freedom in customizing and personalizing their gameplay experience.",
+            "platforms": [
+                1
+            ],
+            "genre": 1,
+            "developer": 1
+        }
     },
     {
+        "pk": 2,
+        "model": "games.game",
         "fields": {
-            "developer": 2,
-            "genre": 2,
-            "platform": 2,
             "publisher": 2,
-            "release_date": "2012-06-15",
-            "summary": "oasj doajdjpa sdjdod sasd",
+            "title": "Metal Gear Solid 4: Guns of the Patriots",
+            "release_date": "2008-06-12",
             "tags": [
                 3
             ],
-            "title": "Game2"
-        },
-        "model": "games.game",
-        "pk": 2
+            "summary": "Metal Gear Solid 4: Guns of the Patriots features an aging and exhausted Solid Snake in the middle of a futuristic battlefield. In spite of his failing body, Snake is equipped with a crucial new device tentatively known as \"OctoCamo,\" a high-tech suit that dynamically transforms its texture based on Snake's surroundings. This revolutionary new gameplay mechanic allows him to seamlessly blend into the environment, providing him with the means to stalk his enemies like never before. This latest chapter in Hideo Kojima's legendary tactical espionage actin series marks the return of several characters from previous Metal Gear Solid games including Revolver Ocelot, Meryl Silverburgh, Naomi Hunter and Raiden, and features an unforgettable story that depicts the desperate state of the future as seen through the eyes of an older Solid Snake.",
+            "platforms": [
+                4
+            ],
+            "genre": 2,
+            "developer": 2
+        }
     },
     {
-        "fields": {
-            "developer": 3,
-            "genre": 3,
-            "platform": 3,
-            "publisher": 3,
-            "release_date": "2012-06-15",
-            "summary": "sdf asdfadsfsdsdfjksdf\r\nsd fsdflkjdsf jkldsf",
-            "tags": [
-                2
-            ],
-            "title": "Game3"
-        },
+        "pk": 3,
         "model": "games.game",
-        "pk": 3
+        "fields": {
+            "publisher": 3,
+            "title": "Deus Ex: Human Revolution",
+            "release_date": "2011-08-11",
+            "tags": [
+                1,
+                4
+            ],
+            "summary": "In Deus Ex: Human Revolution you play Adam Jensen, a security specialist, handpicked to oversee the defense of one of America's most experimental biotechnology firms. But when a black ops team breaks in and kills the scientists you were hired to protect, everything you thought you knew about your job changes. At a time when scientific advancements are routinely turning athletes, soldiers and spies into super-enhanced beings, someone is working very hard to ensure mankind's evolution follows a particular path. You need to discover why - because the decisions you take and the choices you make will be the only things that can determine mankind's future.",
+            "platforms": [
+                1,
+                3,
+                4
+            ],
+            "genre": 2,
+            "developer": 3
+        }
     }
 ]

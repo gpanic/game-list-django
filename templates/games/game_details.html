@@ -13,8 +13,8 @@
 	</thead>
 	<tbody>
 		<tr>
-			<th>Platform</th>
-			<td>{{ game.platform }}</td>
+			<th>Platforms</th>
+			<td>{{ game.get_platforms }}</td>
 		</tr>
 		<tr>
 			<th>Genre</th>
@@ -31,6 +31,10 @@
 		<tr>
 			<th>Developer</th>
 			<td>{{ game.developer }}</td>
+		</tr>
+		<tr>
+			<th>Tags</th>
+			<td>{{ game.get_tags }}</td>
 		</tr>
 	</tbody>
 </table>

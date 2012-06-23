@@ -10,14 +10,15 @@
 </div>
 <div class="row">
 	<div class="span2">
-		Le profile pic
+		<div class="thumbnail">
+			<img src="{{ gravatar_url }}"></img>
+		</div>
 	</div>
-	<div class="span10">
-		<h3>Details</h3>
+	<div class="span5">
 		<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th style="width:200px;">Username</th>
+					<th style="width:125px;">Username</th>
 					<td>{{ user_profile.username }}</td>
 				</tr>
 			</thead>
@@ -59,12 +60,12 @@
 	</div>
 </div>
 <div class="row">
-	<div class="span10 offset2">
+	<div class="span5 offset2">
 		<h3>Statistics</h3>
 		<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th style="width:200px;">Reviews</th>
+					<th style="width:125px;">Reviews</th>
 					<td>{{ user_profile.review_set.all|length }}</td>
 				</tr>
 			</thead>

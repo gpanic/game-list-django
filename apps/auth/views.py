@@ -12,6 +12,7 @@ from django.core.urlresolvers import reverse
 
 from apps.auth.forms import LoginForm
 from apps.auth.forms import RegistrationForm
+from apps.auth.models import UserProfile
 from apps.lists.models import List
 
 def register(request):
@@ -28,6 +29,7 @@ def register(request):
 						form._errors['username'] = ErrorList([u'Username already exists.'])
 					else:
 						user = User.objects.create_user(username, email, password)
+						user.get_profile().gravatar = email
 						user.save()
 						glist = List(user=user)
 						glist.save()
