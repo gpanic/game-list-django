@@ -60,7 +60,7 @@ def login(request):
 						else:
 							return redirect(request.POST.get('next'), context_instance=RequestContext(request))
 					else:
-						messages.error(request, 'Your account has been diabled.')
+						messages.error(request, 'Your account has been disabled.')
 				else:
 					messages.error(request, 'Your username and password were incorrect.')
 		else:

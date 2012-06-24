@@ -34,11 +34,17 @@ class Company(models.Model):
 	def __unicode__(self):
 		return self.name
 
-	def games_released(self):
+	def number_of_games_released(self):
 		games = list(self.game_developer_set.all())
 		games.extend(list(self.game_publisher_set.all()))
 		games = list(set(games))
 		return len(games)
+
+	def games_released(self):
+		games = list(self.game_developer_set.all())
+		games.extend(list(self.game_publisher_set.all()))
+		games = list(set(games))
+		return games
 
 	class Meta:
 		verbose_name_plural = 'Companies'
@@ -68,6 +74,11 @@ class Game(models.Model):
 
 	def get_tags(self):
 		return ', '.join(t.name for t in self.tags.all())
+
+	def get_user_rating(self):
+		lists = self.listitem_set.all()
+		attrs = [l.rating for l in lists]
+		return sum(attrs) / len(attrs)
 
 class Screenshot(models.Model):
 	url = models.URLField()

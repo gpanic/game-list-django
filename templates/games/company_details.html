@@ -18,4 +18,29 @@
 		</tr>
 	</tbody>
 </table>
+<h2>Games Released</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Platforms</th>
+			<th>Genre</th>
+			<th>Release Date</th>
+			<th>Publisher</th>
+			<th>Developer</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for game in company.games_released %}
+		<tr>
+			<td><a href="{% url games_game_details game.id %}">{{ game.title }}</a></td>
+			<td>{{ game.get_platforms }}</td>
+			<td>{{ game.genre }}</td>
+			<td>{{ game.release_date }}</td>
+			<td><a href="{% url games_company_details game.publisher.id %}">{{ game.publisher }}</a></td>
+			<td><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
 {% endblock %}

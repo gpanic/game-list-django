@@ -1,0 +1,76 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;Results for {{ search_query }}{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>Results for <i>'{{ search_query }}'</i></h1>
+</div>
+{% if result_games or result_companies or result_users %}
+{% if result_games %}
+<h2>Games</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Platforms</th>
+			<th>Genre</th>
+			<th>Release Date</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for game in result_games %}
+		<tr>
+			<td><a href="{% url games_game_details game.id %}">{{ game.title }}</a></td>
+			<td>{{ game.get_platforms }}</td>
+			<td>{{ game.genre }}</td>
+			<td>{{ game.release_date }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+{% if result_companies %}
+<h2>Companies</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Website</th>
+			<th>Games Released</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for company in result_companies %}
+		<tr>
+			<td><a href="{% url games_company_details company.id %}">{{ company.name }}</a></td>
+			<td>{{ company.website|urlize }}</td>
+			<td>{{ company.number_of_games_released }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+{% if result_users %}
+<h2>Users</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Last Activity</th>
+			<th>Joined</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for user in result_users %}
+		<tr>
+			<td><a href="{% url profiles_user_details user.username %}">{{ user.username }}</a></td>
+			<td>{{ user.last_login }}</td>
+			<td>{{ user.date_joined }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+{% else %}
+No results.
+{% endif %}
+{% endblock %}

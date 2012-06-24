@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^lists/', include('apps.lists.urls')),
     url(r'^reviews/', include('apps.reviews.urls')),
     url(r'^recommendations/', include('apps.recs.urls')),
+    url(r'^search/', include('apps.search.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     # Examples:

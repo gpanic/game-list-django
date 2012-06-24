@@ -14,6 +14,7 @@
 			<th>Release Date</th>
 			<th>Publisher</th>
 			<th>Developer</th>
+			<th>Rating</th>
 			{% if user.is_authenticated %}
 			<th></th>
 			{% endif %}
@@ -28,6 +29,7 @@
 			<td>{{ game.release_date }}</td>
 			<td><a href="{% url games_company_details game.publisher.id %}">{{ game.publisher }}</a></td>
 			<td><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
+			<td>{{ game.get_user_rating }}</td>
 			{% if user.is_authenticated %}
 			<td><a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a></td>
 			{% endif %}
