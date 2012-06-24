@@ -52,12 +52,13 @@ class Tag(models.Model):
 class Game(models.Model):
 	title = models.CharField(max_length=200)
 	summary = models.TextField(blank=True)
-	release_date = models.DateField()
-	genre = models.ForeignKey(Genre)
-	publisher = models.ForeignKey(Company, related_name='game_publisher_set')
-	developer = models.ForeignKey(Company, related_name='game_developer_set')
-	platforms = models.ManyToManyField(Platform)
-	tags = models.ManyToManyField(Tag)
+	release_date = models.DateField(blank=True, null=True)
+	genre = models.ForeignKey(Genre, blank=True, null=True)
+	publisher = models.ForeignKey(Company, related_name='game_publisher_set', blank=True, null=True)
+	developer = models.ForeignKey(Company, related_name='game_developer_set', blank=True, null=True)
+	platforms = models.ManyToManyField(Platform, blank=True, null=True)
+	tags = models.ManyToManyField(Tag, blank=True, null=True)
+	boxart_url = models.URLField(blank=True)
 
 	def __unicode__(self):
 		return self.title
@@ -67,3 +68,10 @@ class Game(models.Model):
 
 	def get_tags(self):
 		return ', '.join(t.name for t in self.tags.all())
+
+class Screenshot(models.Model):
+	url = models.URLField()
+	game = models.ForeignKey(Game)
+
+	class Meta:
+		unique_together = ('url', 'game')

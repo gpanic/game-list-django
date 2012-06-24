@@ -139,6 +139,7 @@
             "platforms": [
                 1
             ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/20/StarCraft_II_-_Box_Art.jpg",
             "genre": 1,
             "developer": 1
         }
@@ -157,6 +158,7 @@
             "platforms": [
                 4
             ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/4b/Mgs4us_cover_small.jpg",
             "genre": 2,
             "developer": 3
         }
@@ -177,8 +179,105 @@
                 3,
                 4
             ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/0/06/Deus_Ex_Human_Revolution_cover.jpg",
             "genre": 2,
             "developer": 5
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.blizzplanet.com/content/starcraft2/single-player-hands-on/7-20-09/Screenshot054.Jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.bicworks.com/graphics/scrnshot/sc2/Screenshot2010-07-27%2020_24_58.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.hardwareheaven.com/reviewimages/sapphire-radeon-6670-6570/starcraft2-screenshot.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://screenshot.xfire.com/s/101805323-4.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://thenexusnews.com/wp-content/uploads/2011/08/Deus-EX-Human-Revolution-Image-Screenshot-28.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://lazytechguys.zippykidcdn.com/wp-content/uploads/2011/08/Deus-Ex-Human-Revolution-Screenshot-7.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/08/49/84935_4817DXHR_Screenshot_ASSAULT.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://xbox360media.ign.com/xbox360/image/article/115/1153878/deus-ex-human-revolution-20110306082228823.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.miglo.net/walls/metal-gear-solid-4--guns-of-the-patriots-HD.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 10,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/02/89/28997_MGS4-16.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 11,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/02/75/27508_MetalGearSolid4-02.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 12,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.cdn.actiontrip.com/images/features/e32007metalgearsolid4gunsofthepatriots9.jpg",
+            "game": 2
         }
     }
 ]
