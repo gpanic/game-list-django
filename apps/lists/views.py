@@ -32,7 +32,7 @@ def listitem_create(request, username, id_game):
 		request.user.save()
 	else:
 		raise Http404
-	return redirect(reverse('lists_list_details', args=[username]), context_instance=RequestContext(request))
+	return redirect(request.META['HTTP_REFERER'], context_instance=RequestContext(request))
 
 @login_required
 def listitem_update(request, username, id_game):
@@ -66,4 +66,4 @@ def listitem_delete(request, username, id_game):
 		list_item.delete()
 	else:
 		raise Http404
-	return redirect(reverse('lists_list_details', args=[username]), context_instance=RequestContext(request))
+	return redirect(request.META['HTTP_REFERER'], context_instance=RequestContext(request))

@@ -31,7 +31,16 @@
 			<td><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
 			<td>{{ game.get_user_rating }}</td>
 			{% if user.is_authenticated %}
-			<td><a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a></td>
+			{% if game in user.list.get_games %}
+			<td>
+				<a href="{% url lists_listitem_delete user.username game.id %}" class="icon-minus-sign"></a>
+				<a href="{% url lists_listitem_update user.username game.id %}" class="icon-edit"></a>
+			</td>
+			{% else %}
+			<td>
+				<a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a>
+			</td>
+			{% endif %}
 			{% endif %}
 		</tr>
 {% endfor %}

@@ -20,6 +20,12 @@ class List(models.Model):
 	def __unicode__(self):
 		return self.user.username
 
+	def get_games(self):
+		games = []
+		for listitem in self.listitem_set.all():
+			games.append(listitem.game)
+		return games
+
 class ListItem(models.Model):
 	game_list = models.ForeignKey(List)
 	game = models.ForeignKey(Game)

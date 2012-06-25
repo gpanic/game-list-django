@@ -49,6 +49,14 @@
 				</tr>
 			</tbody>
 		</table>
+		{% if user.is_authenticated %}
+		{% if game in user.list.get_games %}
+		<a href="{% url lists_listitem_delete user.username game.id %}" class="btn btn-small"><i class="icon-minus-sign" style="vertical-align:text-bottom;"></i> Remove from List</a>
+		<a href="{% url lists_listitem_update user.username game.id %}" class="btn btn-small"><i class="icon-edit" style="vertical-align:text-bottom;"></i> Edit Entry</a>
+		{% else %}
+		<a href="{% url lists_listitem_create user.username game.id %}" class="btn btn-small"><i class="icon-plus-sign" style="vertical-align:text-bottom;"></i> Add to List</a>
+		{% endif %}
+		{% endif %}
 	</div>
 </div>
 </br>
@@ -79,11 +87,13 @@
 		{% if game.review_set.all %}
 		{% for review in game.review_set.all %}
 		<div class="span5 well">
-			<h4>{{ review.author.username}}
-				<small>on {{ review.date_created }}</small>
-			</h4>
-			<i>Rating: {{ review.rating }}</i></br>
-			<i><a style="color:#333;"href="{% url reviews_review_details review.id %}">{{ review.content|truncatechars:300}}</a></i>
+			<p>
+				<h4><a href="{% url profiles_user_details review.author.username %}">{{ review.author.username}}</a>
+					<small>on {{ review.date_created }}</small>
+				</h4>
+				Rating: {{ review.rating }}
+			</p>
+			<a style="color:#333;"href="{% url reviews_review_details review.id %}">{{ review.content|truncatechars:300}}</a>
 		</div>
 		{% endfor %}
 		{% else %}
@@ -96,16 +106,20 @@
 		{% for userrec in related_userrecs %}
 		<div class="span5 well">
 			<p>
-			<strong>If you liked</strong> <a href="{% url games_game_details game.id %}">{{ game }}</a><br />
-			<strong>You might like</strong> 
-			{% if userrec.game1 == game %}
-			<a href="{% url games_game_details userrec.game2.id %}">{{ userrec.game2 }}</a>
-			{% else %}
-			<a href="{% url games_game_details userrec.game1.id %}">{{ userrec.game1 }}</a>
-			{% endif %}
+				<strong>If you liked</strong> <a href="{% url games_game_details game.id %}">{{ game.title }}</a><br />
+				<strong>You might like</strong> 
+				{% if userrec.game1 == game %}
+				<a href="{% url games_game_details userrec.game2.id %}">{{ userrec.game2.title }}</a>
+				{% else %}
+				<a href="{% url games_game_details userrec.game1.id %}">{{ userrec.game1.title }}</a>
+				{% endif %}
 			</p>
-			<a style="color:#333;" href="{% url recs_userrec_details userrec.id %}">{{ userrec.content|truncatechars:300 }}</a>
-			<h5><small>by {{ userrec.author }}</small></h5>
+			<p>
+				<a style="color:#333;" href="{% url recs_userrec_details userrec.id %}">{{ userrec.content|truncatechars:300 }}</a>
+			</p>
+			<h5>
+				<small>by <a href="{% url profiles_user_details userrec.author.username %}">{{ userrec.author.username }}</a></small>
+			</h5>
 		</div>
 		{% endfor %}
 		{% else %}

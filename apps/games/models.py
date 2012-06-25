@@ -76,8 +76,11 @@ class Game(models.Model):
 		return ', '.join(t.name for t in self.tags.all())
 
 	def get_user_rating(self):
-		lists = self.listitem_set.all()
-		attrs = [l.rating for l in lists]
+		list_items = self.listitem_set.all()
+		attrs = []
+		for item in list_items:
+			if item.rating:
+				attrs.append(item.rating)
 		return sum(attrs) / len(attrs)
 
 class Screenshot(models.Model):
