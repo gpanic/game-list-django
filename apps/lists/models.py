@@ -26,6 +26,30 @@ class List(models.Model):
 			games.append(listitem.game)
 		return games
 
+	def get_time_spent(self):
+		list_items = self.listitem_set.all()
+		time = 0
+		for item in list_items:
+			if item.time_spent:
+				time += item.time_spent
+		return time
+
+	def get_money_spent(self):
+		list_items = self.listitem_set.all()
+		money = 0
+		for item in list_items:
+			if item.money_spent:
+				money += item.money_spent
+		return money
+
+	def get_average_rating(self):
+		list_items = self.listitem_set.all()
+		ratings = []
+		for item in list_items:
+			if item.rating:
+				ratings.append(item.rating)
+		return sum(ratings) / len(ratings)
+
 class ListItem(models.Model):
 	game_list = models.ForeignKey(List)
 	game = models.ForeignKey(Game)

@@ -62,11 +62,28 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th style="width:125px;">Reviews</th>
-					<td>{{ user_profile.review_set.all|length }}</td>
+					<th style="width:125px;">Games on List</th>
+					<td>{{ user_profile.list.listitem_set.all|length }}</td>
 				</tr>
 			</thead>
 			<tbody>
+
+				<tr>
+					<th>Total Time Spent</th>
+					<td>{{ user_profile.list.get_time_spent }} hour(s)</td>
+				</tr>
+				<tr>
+					<th>Total Money Spent</th>
+					<td>{{ user_profile.list.get_money_spent }} €</td>
+				</tr>
+				<tr>
+					<th>Average Rating</th>
+					<td>{{ user_profile.list.get_average_rating|floatformat:1 }}</td>
+				</tr>
+				<tr>
+					<th style="width:125px;">Reviews</th>
+					<td>{{ user_profile.review_set.all|length }}</td>
+				</tr>
 				<tr>
 					<th>Recommendations</th>
 					<td>{{ user_profile.userrec_set.all|length }}</td>
