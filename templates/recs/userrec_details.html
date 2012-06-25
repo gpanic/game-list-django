@@ -14,17 +14,17 @@
 	<thead>
 		<tr>
 			<th>If you liked</th>
-			<th>{{ userrec.game1.title }}</th>
-		</tr>
-		<tr>
-			<th>You might like</th>
-			<th>{{ userrec.game2.title }}</th>
+			<td><a href="{% url games_game_details userrec.game1.id %}">{{ userrec.game1.title }}</a></td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
+			<th>You might like</th>
+			<td><a href="{% url games_game_details userrec.game2.id %}">{{ userrec.game2.title }}</a></td>
+		</tr>
+		<tr>
 			<th>Author</th>
-			<td>{{ userrec.author.username }}</td>
+			<td><a href="{% url profiles_user_details userrec.author.username %}">{{ userrec.author.username }}</a></td>
 		</tr>
 		<tr>
 			<th>Created</th>

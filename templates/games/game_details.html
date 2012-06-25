@@ -96,12 +96,12 @@
 		{% for userrec in related_userrecs %}
 		<div class="span5 well">
 			<p>
-			<strong>If you liked</strong> {{ game }}<br />
+			<strong>If you liked</strong> <a href="{% url games_game_details game.id %}">{{ game }}</a><br />
 			<strong>You might like</strong> 
 			{% if userrec.game1 == game %}
-			{{ userrec.game2 }}
+			<a href="{% url games_game_details userrec.game2.id %}">{{ userrec.game2 }}</a>
 			{% else %}
-			{{ userrec.game1 }}
+			<a href="{% url games_game_details userrec.game1.id %}">{{ userrec.game1 }}</a>
 			{% endif %}
 			</p>
 			<a style="color:#333;" href="{% url recs_userrec_details userrec.id %}">{{ userrec.content|truncatechars:300 }}</a>

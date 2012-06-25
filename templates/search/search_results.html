@@ -10,8 +10,8 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Title</th>
-			<th>Platforms</th>
+			<th style="width:350px;">Title</th>
+			<th style="width:250px;">Platforms</th>
 			<th>Genre</th>
 			<th>Release Date</th>
 		</tr>
@@ -33,8 +33,8 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Name</th>
-			<th>Website</th>
+			<th style="width:350px;">Name</th>
+			<th style="width:250px;">Website</th>
 			<th>Games Released</th>
 		</tr>
 	</thead>
@@ -54,8 +54,8 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Username</th>
-			<th>Last Activity</th>
+			<th style="width:350px;">Username</th>
+			<th style="width:250px;">Last Activity</th>
 			<th>Joined</th>
 		</tr>
 	</thead>
@@ -63,8 +63,8 @@
 {% for user in result_users %}
 		<tr>
 			<td><a href="{% url profiles_user_details user.username %}">{{ user.username }}</a></td>
-			<td>{{ user.last_login }}</td>
-			<td>{{ user.date_joined }}</td>
+			<td>{{ user.last_login|date:"F j, Y, H:i" }}</td>
+			<td>{{ user.date_joined|date:"F j, Y, H:i" }}</td>
 		</tr>
 {% endfor %}
 	</tbody>

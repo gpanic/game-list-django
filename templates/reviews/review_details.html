@@ -14,13 +14,13 @@
 	<thead>
 		<tr>
 			<th>Game</th>
-			<td>{{ review.game.title }}</td>
+			<td><a href="{% url games_game_details review.game.id %}">{{ review.game.title }}</a></td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<th>Author</th>
-			<td>{{ review.author.username }}</td>
+			<td><a href="{% url profiles_user_details review.author.username %}">{{ review.author.username }}</a></td>
 		</tr>
 		<tr>
 			<th>Created</th>
