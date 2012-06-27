@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
+from pybb.models import PybbProfile
 
 GENDER = (
 	(0, 'Not given'),
@@ -8,7 +9,7 @@ GENDER = (
 	(2, 'Female'),
 )
 
-class UserProfile(models.Model):
+class UserProfile(PybbProfile):
 	user = models.OneToOneField(User)
 
 	gravatar_email = models.EmailField(max_length=100)

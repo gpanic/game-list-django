@@ -48,7 +48,10 @@ class List(models.Model):
 		for item in list_items:
 			if item.rating:
 				ratings.append(item.rating)
-		return sum(ratings) / len(ratings)
+		if ratings:
+			return float(sum(ratings)) / float(len(ratings))
+		else:
+			return 0
 
 class ListItem(models.Model):
 	game_list = models.ForeignKey(List)

@@ -100,6 +100,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'pybb.middleware.PybbMiddleware',
 )
 
 ROOT_URLCONF = 'gamelist.urls'
@@ -133,6 +135,11 @@ INSTALLED_APPS = (
     'apps.reviews',
     'apps.recs',
     'apps.profiles',
+
+    'pybb',
+    'pytils',
+    'sorl.thumbnail',
+    'pure_pagination',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -167,3 +174,7 @@ LOGGING = {
 AUTH_PROFILE_MODULE = 'auth.UserProfile'
 
 LOGIN_URL = '/login'
+
+CONTEXT_PROCESSORS = (
+    'pybb.context_processors.processor',
+)

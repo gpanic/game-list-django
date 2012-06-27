@@ -9,7 +9,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2012-06-23T11:17:43.943Z",
+            "last_login": "2012-06-27T11:34:55.904Z",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$Qt3ocu5RUuh7$vNPmaFdb2VFDSiZEvanV6QFPLNC9rR+UofmnzlYOrSE=",
@@ -27,7 +27,7 @@
             "is_active": true,
             "is_superuser": false,
             "is_staff": false,
-            "last_login": "2012-06-23T11:15:34Z",
+            "last_login": "2012-06-27T10:49:20.046Z",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$NXm7tE9aGdwm$5H76DpNsKy+mJVUz9OEnYAaeD9Fg598GHARyqdSvByM=",
@@ -36,15 +36,128 @@
         }
     },
     {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "user2",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T11:01:02.235Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$m2BSMtpw9jeN$GiETukIO5TK1sekKqoj4WppVKlOsIVTETFwQcmhYvME=",
+            "email": "user2@user2.com",
+            "date_joined": "2012-06-27T11:00:57.851Z"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.user",
+        "fields": {
+            "username": "user3",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T11:04:54.210Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$y9DGDlNfBIUk$708Rmb0PJp2csiWVsFARB7Y7Q6EIKoZWXIji5B8TrNI=",
+            "email": "user3@user3.com",
+            "date_joined": "2012-06-27T11:04:50.662Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.user",
+        "fields": {
+            "username": "user4",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T11:07:36.682Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$dM4PlSzlNwam$YZybXQd1VBbgGun2PA916GP6HOrSpAEt+Vk4S189VWY=",
+            "email": "user4@user4.com",
+            "date_joined": "2012-06-27T11:07:33.293Z"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.user",
+        "fields": {
+            "username": "user5",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T11:12:49.948Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$9WuuupYWlsfQ$Qzlil9RkwO7halQyHV4xqlkHrUjv8BZZYfvjAJMBYTI=",
+            "email": "user5@user5.com",
+            "date_joined": "2012-06-27T11:12:44.011Z"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.user",
+        "fields": {
+            "username": "user6",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T11:24:21.716Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$HZwSkgrJxJL6$EDoMeUC/XNJJ8PAuLe4s3xQF5kteL56Z9alVUGorZJE=",
+            "email": "user6@user6.com",
+            "date_joined": "2012-06-27T11:24:17.555Z"
+        }
+    },
+    {
         "pk": 1,
         "model": "auth.userprofile",
         "fields": {
             "website": "http://www.gamelist.me/",
             "about": "Website Admin",
-            "gender": 1,
-            "gravatar_email": "gregor.panic@gmail.com",
-            "birthday": "1990-04-02",
+            "show_signatures": true,
+            "language": "English",
             "location": "Slovenia",
+            "signature_html": "",
+            "gender": 1,
+            "time_zone": 3.0,
+            "gravatar_email": "gregor.panic@gmail.com",
+            "post_count": 0,
+            "birthday": "1990-04-02",
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
             "user": 1
         }
     },
@@ -54,11 +167,124 @@
         "fields": {
             "website": "",
             "about": "",
-            "gender": 0,
-            "gravatar_email": "user@user.com",
-            "birthday": null,
+            "show_signatures": true,
+            "language": "English",
             "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user@user.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
             "user": 2
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user2@user2.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user3@user3.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 4
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user4@user4.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 5
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user5@user5.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 6
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user6@user6.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 7
         }
     }
 ]

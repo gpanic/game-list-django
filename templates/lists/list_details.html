@@ -32,7 +32,7 @@
 			<td>{{ item.money_spent }}</td>
 			<td>{{ item.notes }}</td>
 			{% if user.is_authenticated and user.username == list.user.username %}
-			<td>
+			<td style="width:32px;">
 				<a href="{% url lists_listitem_delete user.username item.game.id %}" class="icon-minus-sign"></a>
 				<a href="{% url lists_listitem_update user.username item.game.id %}" class="icon-edit"></a></td>
 			{% endif %}

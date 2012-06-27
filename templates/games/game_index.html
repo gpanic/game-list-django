@@ -24,12 +24,12 @@
 {% for game in game_list %}
 		<tr>
 			<td><a href="{% url games_game_details game.id %}">{{ game.title }}</a></td>
-			<td>{{ game.get_platforms }}</td>
-			<td>{{ game.genre }}</td>
+			<td style="width:100px;">{{ game.get_platforms }}</td>
+			<td style="width:80px;">{{ game.genre }}</td>
 			<td>{{ game.release_date }}</td>
-			<td><a href="{% url games_company_details game.publisher.id %}">{{ game.publisher }}</a></td>
-			<td><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
-			<td>{{ game.get_user_rating }}</td>
+			<td style="width:100px;"><a href="{% url games_company_details game.publisher.id %}">{{ game.publisher }}</a></td>
+			<td style="width:100px;"><a href="{% url games_company_details game.developer.id %}">{{ game.developer }}</a></td>
+			<td>{{ game.get_user_rating|floatformat:1 }}</td>
 			{% if user.is_authenticated %}
 			{% if game in user.list.get_games %}
 			<td>
@@ -37,7 +37,7 @@
 				<a href="{% url lists_listitem_update user.username game.id %}" class="icon-edit"></a>
 			</td>
 			{% else %}
-			<td>
+			<td style="width:32px;">
 				<a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a>
 			</td>
 			{% endif %}

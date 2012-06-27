@@ -81,7 +81,10 @@ class Game(models.Model):
 		for item in list_items:
 			if item.rating:
 				attrs.append(item.rating)
-		return sum(attrs) / len(attrs)
+		if attrs:
+			return float(sum(attrs)) / float(len(attrs))
+		else:
+			return 0
 
 class Screenshot(models.Model):
 	url = models.URLField()

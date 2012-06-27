@@ -1,1 +1,1403 @@
-[{"pk": 1, "model": "games.genre", "fields": {"name": "Strategy", "description": ""}}, {"pk": 2, "model": "games.genre", "fields": {"name": "Action", "description": ""}}, {"pk": 1, "model": "games.platform", "fields": {"name": "PC"}}, {"pk": 2, "model": "games.platform", "fields": {"name": "Wii"}}, {"pk": 3, "model": "games.platform", "fields": {"name": "Xbox 360"}}, {"pk": 4, "model": "games.platform", "fields": {"name": "PS3"}}, {"pk": 5, "model": "games.platform", "fields": {"name": "PS Vita"}}, {"pk": 6, "model": "games.platform", "fields": {"name": "3DS"}}, {"pk": 7, "model": "games.platform", "fields": {"name": "PS2"}}, {"pk": 1, "model": "games.company", "fields": {"website": "http://www.blizzard.com/", "name": "Blizzard Entertainment"}}, {"pk": 2, "model": "games.company", "fields": {"website": "http://www.konami.com/", "name": "Konami"}}, {"pk": 3, "model": "games.company", "fields": {"website": "http://www.konami.jp/kojima_pro/", "name": "Kojima Productions"}}, {"pk": 4, "model": "games.company", "fields": {"website": "http://www.square-enix.com/", "name": "Square Enix"}}, {"pk": 5, "model": "games.company", "fields": {"website": "http://www.eidosmontreal.com/", "name": "Eidos Montreal"}}, {"pk": 1, "model": "games.tag", "fields": {"name": "science fiction"}}, {"pk": 2, "model": "games.tag", "fields": {"name": "fantasy"}}, {"pk": 3, "model": "games.tag", "fields": {"name": "stealth"}}, {"pk": 4, "model": "games.tag", "fields": {"name": "cyberpunk"}}, {"pk": 1, "model": "games.game", "fields": {"publisher": 1, "title": "Starcraft II: Wings of Liberty", "release_date": "2010-07-27", "tags": [1], "summary": "StarCraft II continues the epic saga of the Protoss, Terran, and Zerg. These three distinct and powerful races clash once again in the fast-paced real-time strategy sequel to the legendary original, StarCraft. Legions of veteran, upgraded, and brand-new unit types do battle across the galaxy, as each faction struggles for survival. Featuring a unique single-player campaign that picks up where StarCraft: Brood War left off, StarCraft II presents a cast of new heroes and familiar faces in an edgy sci-fi story filled with adventure and intrigue. In addition, Blizzard again offers unparalleled online play through Battle.net, the company's world-renowned gaming service, with several enhancements and new features to make StarCraft II the ultimate competitive real-time strategy game. Features fast-paced, hard-hitting, tightly balanced competitive real-time strategy gameplay that recaptures and improves on the magic of the original game. New units and gameplay mechanics further distinguish each race. Vibrant new 3D-graphics engine with support for dazzling visual effects and massive unit and army sizes. Full map-making and scripting tools to give players incredible freedom in customizing and personalizing their gameplay experience.", "platforms": [1], "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/20/StarCraft_II_-_Box_Art.jpg", "genre": 1, "developer": 1}}, {"pk": 2, "model": "games.game", "fields": {"publisher": 2, "title": "Metal Gear Solid 4: Guns of the Patriots", "release_date": "2008-06-12", "tags": [3], "summary": "Metal Gear Solid 4: Guns of the Patriots features an aging and exhausted Solid Snake in the middle of a futuristic battlefield. In spite of his failing body, Snake is equipped with a crucial new device tentatively known as \"OctoCamo,\" a high-tech suit that dynamically transforms its texture based on Snake's surroundings. This revolutionary new gameplay mechanic allows him to seamlessly blend into the environment, providing him with the means to stalk his enemies like never before. This latest chapter in Hideo Kojima's legendary tactical espionage actin series marks the return of several characters from previous Metal Gear Solid games including Revolver Ocelot, Meryl Silverburgh, Naomi Hunter and Raiden, and features an unforgettable story that depicts the desperate state of the future as seen through the eyes of an older Solid Snake.", "platforms": [4], "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/4b/Mgs4us_cover_small.jpg", "genre": 2, "developer": 3}}, {"pk": 3, "model": "games.game", "fields": {"publisher": 4, "title": "Deus Ex: Human Revolution", "release_date": "2011-08-23", "tags": [4], "summary": "In Deus Ex: Human Revolution you play Adam Jensen, a security specialist, handpicked to oversee the defense of one of America's most experimental biotechnology firms. But when a black ops team breaks in and kills the scientists you were hired to protect, everything you thought you knew about your job changes. At a time when scientific advancements are routinely turning athletes, soldiers and spies into super-enhanced beings, someone is working very hard to ensure mankind's evolution follows a particular path. You need to discover why - because the decisions you take and the choices you make will be the only things that can determine mankind's future.", "platforms": [1, 3, 4], "boxart_url": "http://upload.wikimedia.org/wikipedia/en/0/06/Deus_Ex_Human_Revolution_cover.jpg", "genre": 2, "developer": 5}}, {"pk": 4, "model": "games.game", "fields": {"publisher": 2, "title": "Metal Gear Solid 3: Snake Eater", "release_date": "2004-11-24", "tags": [3], "summary": "In the struggle to achieve world peace and world dominance, rivaling governments are secretly developing weapons technology that could threaten the future existence of life. Destined to be the first, a race ensues to become the ultimate nation. A special elite tactical soldier is summoned to penetrate deep in the heart of enemy territory and obtain intel about \"Metal Gear,\" a prototype weapon with nuclear capabilities. This is your mission and you must infiltrate alone. Interactive environments where traps catch enemies and prey. Rely on camouflage, combat, hunting and instincts to survive. Set in the 1960s where politics and war are shaping real world history. Blockbuster musical score composed by Harry Gregson-Williams.", "platforms": [4, 7], "boxart_url": "http://upload.wikimedia.org/wikipedia/en/b/b3/Mgs3box.jpg", "genre": 2, "developer": 3}}, {"pk": 1, "model": "games.screenshot", "fields": {"url": "http://www.blizzplanet.com/content/starcraft2/single-player-hands-on/7-20-09/Screenshot054.Jpg", "game": 1}}, {"pk": 2, "model": "games.screenshot", "fields": {"url": "http://www.bicworks.com/graphics/scrnshot/sc2/Screenshot2010-07-27%2020_24_58.jpg", "game": 1}}, {"pk": 3, "model": "games.screenshot", "fields": {"url": "http://www.hardwareheaven.com/reviewimages/sapphire-radeon-6670-6570/starcraft2-screenshot.jpg", "game": 1}}, {"pk": 4, "model": "games.screenshot", "fields": {"url": "http://screenshot.xfire.com/s/101805323-4.jpg", "game": 1}}, {"pk": 5, "model": "games.screenshot", "fields": {"url": "http://thenexusnews.com/wp-content/uploads/2011/08/Deus-EX-Human-Revolution-Image-Screenshot-28.jpg", "game": 3}}, {"pk": 6, "model": "games.screenshot", "fields": {"url": "http://lazytechguys.zippykidcdn.com/wp-content/uploads/2011/08/Deus-Ex-Human-Revolution-Screenshot-7.jpg", "game": 3}}, {"pk": 7, "model": "games.screenshot", "fields": {"url": "http://oyster.ignimgs.com/ve3d/images/08/49/84935_4817DXHR_Screenshot_ASSAULT.jpg", "game": 3}}, {"pk": 8, "model": "games.screenshot", "fields": {"url": "http://xbox360media.ign.com/xbox360/image/article/115/1153878/deus-ex-human-revolution-20110306082228823.jpg", "game": 3}}, {"pk": 9, "model": "games.screenshot", "fields": {"url": "http://www.miglo.net/walls/metal-gear-solid-4--guns-of-the-patriots-HD.jpg", "game": 2}}, {"pk": 10, "model": "games.screenshot", "fields": {"url": "http://oyster.ignimgs.com/ve3d/images/02/89/28997_MGS4-16.jpg", "game": 2}}, {"pk": 11, "model": "games.screenshot", "fields": {"url": "http://oyster.ignimgs.com/ve3d/images/02/75/27508_MetalGearSolid4-02.jpg", "game": 2}}, {"pk": 12, "model": "games.screenshot", "fields": {"url": "http://www.cdn.actiontrip.com/images/features/e32007metalgearsolid4gunsofthepatriots9.jpg", "game": 2}}, {"pk": 13, "model": "games.screenshot", "fields": {"url": "http://s.pro-gmedia.com/videogamer/media/images/ps2/metal_gear_solid_3_subsistence/screens/metal_gear_solid_3_subsistence_4.jpg", "game": 4}}, {"pk": 14, "model": "games.screenshot", "fields": {"url": "http://www.gamers-globe.com/images/screenshots/metal-gear-solid-3-snake-eater/metal-gear-solid-3-snake-eater-ps2-002.jpg", "game": 4}}, {"pk": 15, "model": "games.screenshot", "fields": {"url": "http://www.gamers-globe.com/images/screenshots/metal-gear-solid-3-snake-eater/metal-gear-solid-3-snake-eater-ps2-003.jpg", "game": 4}}, {"pk": 16, "model": "games.screenshot", "fields": {"url": "http://image.com.com/gamespot/images/2004/reviews/914828_20041116_screen004.jpg", "game": 4}}]
+[
+    {
+        "pk": 1,
+        "model": "games.genre",
+        "fields": {
+            "name": "Strategy",
+            "description": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.genre",
+        "fields": {
+            "name": "Action",
+            "description": ""
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.genre",
+        "fields": {
+            "name": "Action Adventure",
+            "description": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.genre",
+        "fields": {
+            "name": "First Person Shooter",
+            "description": ""
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.genre",
+        "fields": {
+            "name": "Role Playing",
+            "description": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.genre",
+        "fields": {
+            "name": "Racing",
+            "description": ""
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.genre",
+        "fields": {
+            "name": "Sports",
+            "description": ""
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.genre",
+        "fields": {
+            "name": "Adventure",
+            "description": ""
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.platform",
+        "fields": {
+            "name": "PC"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.platform",
+        "fields": {
+            "name": "Wii"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.platform",
+        "fields": {
+            "name": "Xbox 360"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.platform",
+        "fields": {
+            "name": "PS3"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.platform",
+        "fields": {
+            "name": "PS Vita"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.platform",
+        "fields": {
+            "name": "3DS"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.platform",
+        "fields": {
+            "name": "PS2"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.platform",
+        "fields": {
+            "name": "Xbox"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.platform",
+        "fields": {
+            "name": "PS"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.blizzard.com/",
+            "name": "Blizzard Entertainment"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.konami.com/",
+            "name": "Konami"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.konami.jp/kojima_pro/",
+            "name": "Kojima Productions"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.square-enix.com/",
+            "name": "Square Enix"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.eidosmontreal.com/",
+            "name": "Eidos Montreal"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.ionstorm.com/",
+            "name": "Ion Storm"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.eidosinteractive.com/",
+            "name": "Eidos Interactive"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.company",
+        "fields": {
+            "website": "http://rockstarvancouver.com/",
+            "name": "Rockstar Vancouver"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.rockstargames.com/",
+            "name": "Rockstar Games"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.remedy.fi/",
+            "name": "Remedy Entertainment"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.us.playstation.com/",
+            "name": "Sony Computer Entertainment"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "games.company",
+        "fields": {
+            "website": "",
+            "name": "SCE Santa Monica Studio"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.valvesoftware.com/",
+            "name": "Valve Corporation"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "games.company",
+        "fields": {
+            "website": "",
+            "name": "Square"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.cdprojekt.info/",
+            "name": "CD Projekt Red Studio"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.atari.com/",
+            "name": "Atari"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.polyphony.co.jp/english/",
+            "name": "Polyphony Digital"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.codemasters.com/",
+            "name": "Codemasters"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.easports.com/",
+            "name": "EA Sports"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.ea.com/",
+            "name": "Electronic Arts"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "games.company",
+        "fields": {
+            "website": "",
+            "name": "Visual Concepts"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "games.company",
+        "fields": {
+            "website": "http://2ksports.com/",
+            "name": "2K Sports"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.wadjeteyegames.com/",
+            "name": "Wadjet Eye Games"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.lucasarts.com/",
+            "name": "Lucas Arts"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "games.company",
+        "fields": {
+            "website": "http://www.telltalegames.com/",
+            "name": "Telltale Games"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.tag",
+        "fields": {
+            "name": "science fiction"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.tag",
+        "fields": {
+            "name": "fantasy"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.tag",
+        "fields": {
+            "name": "stealth"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.tag",
+        "fields": {
+            "name": "cyberpunk"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.tag",
+        "fields": {
+            "name": "cold war"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.tag",
+        "fields": {
+            "name": "cinematic"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.tag",
+        "fields": {
+            "name": "triller"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.tag",
+        "fields": {
+            "name": "film noir"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.tag",
+        "fields": {
+            "name": "love story"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "games.tag",
+        "fields": {
+            "name": "historic"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "games.tag",
+        "fields": {
+            "name": "mythical"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "games.tag",
+        "fields": {
+            "name": "apocalypse"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "games.tag",
+        "fields": {
+            "name": "zombies"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "games.tag",
+        "fields": {
+            "name": "futuristic"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "games.tag",
+        "fields": {
+            "name": "cars"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "games.tag",
+        "fields": {
+            "name": "realistic"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "games.tag",
+        "fields": {
+            "name": "football"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "games.tag",
+        "fields": {
+            "name": "simulation"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "games.tag",
+        "fields": {
+            "name": "basketball"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "games.tag",
+        "fields": {
+            "name": "comedy"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.game",
+        "fields": {
+            "publisher": 1,
+            "title": "Starcraft II: Wings of Liberty",
+            "release_date": "2010-07-27",
+            "tags": [
+                1
+            ],
+            "summary": "StarCraft II continues the epic saga of the Protoss, Terran, and Zerg. These three distinct and powerful races clash once again in the fast-paced real-time strategy sequel to the legendary original, StarCraft. Legions of veteran, upgraded, and brand-new unit types do battle across the galaxy, as each faction struggles for survival. Featuring a unique single-player campaign that picks up where StarCraft: Brood War left off, StarCraft II presents a cast of new heroes and familiar faces in an edgy sci-fi story filled with adventure and intrigue. In addition, Blizzard again offers unparalleled online play through Battle.net, the company's world-renowned gaming service, with several enhancements and new features to make StarCraft II the ultimate competitive real-time strategy game. Features fast-paced, hard-hitting, tightly balanced competitive real-time strategy gameplay that recaptures and improves on the magic of the original game. New units and gameplay mechanics further distinguish each race. Vibrant new 3D-graphics engine with support for dazzling visual effects and massive unit and army sizes. Full map-making and scripting tools to give players incredible freedom in customizing and personalizing their gameplay experience.",
+            "platforms": [
+                1
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/20/StarCraft_II_-_Box_Art.jpg",
+            "genre": 1,
+            "developer": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.game",
+        "fields": {
+            "publisher": 2,
+            "title": "Metal Gear Solid 4: Guns of the Patriots",
+            "release_date": "2008-06-12",
+            "tags": [
+                3
+            ],
+            "summary": "Metal Gear Solid 4: Guns of the Patriots features an aging and exhausted Solid Snake in the middle of a futuristic battlefield. In spite of his failing body, Snake is equipped with a crucial new device tentatively known as \"OctoCamo,\" a high-tech suit that dynamically transforms its texture based on Snake's surroundings. This revolutionary new gameplay mechanic allows him to seamlessly blend into the environment, providing him with the means to stalk his enemies like never before. This latest chapter in Hideo Kojima's legendary tactical espionage actin series marks the return of several characters from previous Metal Gear Solid games including Revolver Ocelot, Meryl Silverburgh, Naomi Hunter and Raiden, and features an unforgettable story that depicts the desperate state of the future as seen through the eyes of an older Solid Snake.",
+            "platforms": [
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/4b/Mgs4us_cover_small.jpg",
+            "genre": 2,
+            "developer": 3
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.game",
+        "fields": {
+            "publisher": 4,
+            "title": "Deus Ex: Human Revolution",
+            "release_date": "2011-08-23",
+            "tags": [
+                4
+            ],
+            "summary": "In Deus Ex: Human Revolution you play Adam Jensen, a security specialist, handpicked to oversee the defense of one of America's most experimental biotechnology firms. But when a black ops team breaks in and kills the scientists you were hired to protect, everything you thought you knew about your job changes. At a time when scientific advancements are routinely turning athletes, soldiers and spies into super-enhanced beings, someone is working very hard to ensure mankind's evolution follows a particular path. You need to discover why - because the decisions you take and the choices you make will be the only things that can determine mankind's future.",
+            "platforms": [
+                1,
+                3,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/0/06/Deus_Ex_Human_Revolution_cover.jpg",
+            "genre": 2,
+            "developer": 5
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.game",
+        "fields": {
+            "publisher": 2,
+            "title": "Metal Gear Solid 3: Snake Eater",
+            "release_date": "2004-11-24",
+            "tags": [
+                3
+            ],
+            "summary": "In the struggle to achieve world peace and world dominance, rivaling governments are secretly developing weapons technology that could threaten the future existence of life. Destined to be the first, a race ensues to become the ultimate nation. A special elite tactical soldier is summoned to penetrate deep in the heart of enemy territory and obtain intel about \"Metal Gear,\" a prototype weapon with nuclear capabilities. This is your mission and you must infiltrate alone. Interactive environments where traps catch enemies and prey. Rely on camouflage, combat, hunting and instincts to survive. Set in the 1960s where politics and war are shaping real world history. Blockbuster musical score composed by Harry Gregson-Williams.",
+            "platforms": [
+                4,
+                7
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/b/b3/Mgs3box.jpg",
+            "genre": 2,
+            "developer": 3
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.game",
+        "fields": {
+            "publisher": 7,
+            "title": "Deus Ex",
+            "release_date": "2000-06-26",
+            "tags": [
+                4
+            ],
+            "summary": "The game that incorporates RPG, action, adventure, and 1st-person shooter genres into a chaotic blend of real-world conspiracies, cliffhangers, and plot twists. A richly simulated world of unparalleled interactivity, engineered to react logically to your every action. The decisions and consequences are yours.",
+            "platforms": [
+                1,
+                8
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/42/Dxcover.jpg",
+            "genre": 2,
+            "developer": 6
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.game",
+        "fields": {
+            "publisher": 7,
+            "title": "Deus Ex: Invisible War",
+            "release_date": "2003-12-02",
+            "tags": [
+                1
+            ],
+            "summary": "Fifteen years following the events depicted in the multi-award winning \"Deus Ex,\" the world is just beginning to recover from catastrophic depression. As an elite anti-terrorist agent, you must fight numerous militant factions bent on violently reshaping the world to suit their own agendas. Using high-tech gadgetry and futuristic body modification (or biomods), you are granted near superhuman powers. Travel the globe while uncovering fiendish plots of world domination. Unmask the conspirators, while uncovering the shocking truth behind your own origins.",
+            "platforms": [
+                1
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/7/79/Dxinvwar.jpg",
+            "genre": 2,
+            "developer": 6
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.game",
+        "fields": {
+            "publisher": 2,
+            "title": "Metal Gear Solid",
+            "release_date": "1998-09-03",
+            "tags": [
+                3,
+                5,
+                6
+            ],
+            "summary": "You are Snake, a government agent on a mission to regain control of a secret nuclear weapons base from terrorist hands. Lightly armed and facing an army of foes, Snake must avoid firefights in order to survive. If Snake can locate them he can utilize advanced hardware, ranging from silenced pistols to ground-to-air missiles. Enemies react to sight and sound - so stay quiet and stay in the shadows. State-of-the-art graphics: textures, transparencies, models and explosions. Taut, gripping story with multiple endings - a truly cinematic experience.",
+            "platforms": [
+                1,
+                9
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/3/33/Metal_Gear_Solid_cover_art.png",
+            "genre": 2,
+            "developer": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.game",
+        "fields": {
+            "publisher": 2,
+            "title": "Metal Gear Solid 2: Sons of Liberty ",
+            "release_date": "2001-11-12",
+            "tags": [
+                3,
+                6
+            ],
+            "summary": "Since the incident on Shadow Moses Island, Metal Gear's top-secret technology has been leaked into the black market through the machinations of Revolver Ocelot. As a result, countless variations of Metal Gears have sprung up in every corner of the globe, making the weapon an increasingly common component of the armed forces of nuclear powers. In the midst of all of this, Solid Snake, now a member of the anti-Metal Gear group \"Philanthropy,\" has learned that a new prototype Metal Gear has been developed by the U.S. Marines and is being transported in secret to an unknown destination. To learn more about this new machine, Snake must infiltrate the transport, disguised as a tanker, as it makes its way down the Hudson River. Just as Snake is about to begin his mission, however, the ship is seized by a mysterious and well-armed group bent on stealing the new Metal Gear for their own, nefarious purposes.",
+            "platforms": [
+                1,
+                4,
+                7
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/6/6a/Metalgear2boxart.jpg",
+            "genre": 2,
+            "developer": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.game",
+        "fields": {
+            "publisher": 9,
+            "title": "Max Payne 3",
+            "release_date": "2012-06-01",
+            "tags": [
+                6,
+                7
+            ],
+            "summary": "The tragedies that took Max Payne's loved ones years ago are wounds that won't heal. No longer a police, nearly washed up and addicted to pain killers, Max takes a job in São Paulo, Brazil, protecting the family of wealthy real estate mogul Rodrigo Branco to finally escape his troubled past. But as events spin out of his control, Max finds himself alone on the streets of an unfamiliar city, desperately searching for the truth and fighting for a way out.",
+            "platforms": [
+                1,
+                3,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/21/Max_Payne_3_Cover.jpg",
+            "genre": 2,
+            "developer": 8
+        }
+    },
+    {
+        "pk": 10,
+        "model": "games.game",
+        "fields": {
+            "publisher": 9,
+            "title": "Max Payne 2: The Fall of Max Payne ",
+            "release_date": "2003-10-14",
+            "tags": [
+                6,
+                7,
+                8,
+                9
+            ],
+            "summary": "Max Payne 2: The Fall of Max Payne is a violent, film-noir love story for mature audiences. Dark, tragic and intense, the in-depth story is a thrill-ride of shocking twists and revelations. Love hurts. The fans of Max Payne won?t be disappointed. The fierce, yet stylish action sequences and slow-motion gunplay that has become synonymous with Max Payne is back and better than ever. New and enhanced moves and options provide breathtaking cinematic game play. Max Payne 2: The Fall of Max Payne is set to raise the bar on action games all over again.",
+            "platforms": [
+                1,
+                7,
+                8
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/21/Max_Payne_2.jpg",
+            "genre": 2,
+            "developer": 10
+        }
+    },
+    {
+        "pk": 11,
+        "model": "games.game",
+        "fields": {
+            "publisher": 9,
+            "title": "Max Payne",
+            "release_date": "2001-07-23",
+            "tags": [
+                6,
+                7
+            ],
+            "summary": "A story-driven third-person shooter with a realistic weapon setup including over a dozen real-life guns, all fitting the crime-story setting like a bullet in the head. The action is surrounded with more than 80 hand-painted comic-screens that enhance the game's gritty atmosphere and attitude, introduce the game's murderous cast of characters, and carry the plot from one location to the next.",
+            "platforms": [
+                1,
+                7,
+                8
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/4c/Maxpaynebox.jpg",
+            "genre": 2,
+            "developer": 10
+        }
+    },
+    {
+        "pk": 12,
+        "model": "games.game",
+        "fields": {
+            "publisher": 11,
+            "title": "God of War III ",
+            "release_date": "2010-03-16",
+            "tags": [
+                10,
+                11
+            ],
+            "summary": "Set in the realm of brutal Greek mythology, God of War III is a single-player game which allows players to take on the climatic role of the ex-Spartan warrior, Kratos, as he scales through the intimidating heights of Mt. Olympus and the dark depths of Hell to seek revenge on those who have betrayed him. Armed with double-chained blades, and an array of new weapons and magic for this iteration of the trilogy, Kratos must take on mythology’s darkest creatures while solving intricate puzzles throughout his merciless quest to destroy Olympus.",
+            "platforms": [
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/1/1b/God_of_War_III_not_final_art.jpg",
+            "genre": 3,
+            "developer": 12
+        }
+    },
+    {
+        "pk": 13,
+        "model": "games.game",
+        "fields": {
+            "publisher": 13,
+            "title": "Half-Life 2",
+            "release_date": "2004-11-16",
+            "tags": [
+                1
+            ],
+            "summary": "By taking the suspense, challenge and visceral charge of the original, and adding startling new realism and responsiveness, Half-Life 2 opens the door to a world where the player's presence affects everything around him, from the physical environment to the behaviors -- even the emotions -- of both friends and enemies. The player again picks up the crowbar of research scientist Gordon Freeman, who finds himself on an alien-infested Earth being picked to the bone, its resources depleted, its populace dwindling. Freeman is thrust into the unenviable role of rescuing the world from the wrong he unleashed back at Black Mesa. And a lot of people -- people he cares about -- are counting on him.",
+            "platforms": [
+                1,
+                8
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg",
+            "genre": 4,
+            "developer": 13
+        }
+    },
+    {
+        "pk": 14,
+        "model": "games.game",
+        "fields": {
+            "publisher": 13,
+            "title": "Left 4 Dead 2",
+            "release_date": "2009-11-17",
+            "tags": [
+                12,
+                13
+            ],
+            "summary": "Set in the zombie apocalypse, Left 4 Dead 2 (L4D2) is the highly anticipated sequel to the award-winning Left 4 Dead. This co-operative action horror FPS takes you and your friends through the cities, swamps and cemeteries of the Deep South, from Savannah to New Orleans across five expansive campaigns. Play as one of four new survivors armed with a wide and devastating array of classic and upgraded weapons. In addition to firearms, you'll also get a chance to take out some aggression on infected with a variety of carnage-creating melee weapons, from chainsaws to axes and even the deadly frying pan. You'll be putting these weapons to the test against (or playing as in Versus) three horrific and formidable new Special Infected. You’ll also encounter five new \"uncommon\" common infected, including the terrifying Mudmen. Helping to take L4D's frantic, action-packed gameplay to the next level is AI Director 2.0. This improved Director has the ability to procedurally change the weather you’ll fight through and the pathways you'll take, in addition to tailoring the enemy population, effects, and sounds to match your performance. L4D2 promises a satisfying and uniquely challenging experience every time the game is played, custom-fitted to your style of play.",
+            "platforms": [
+                1,
+                3
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/b/ba/Left4Dead2.jpg",
+            "genre": 4,
+            "developer": 13
+        }
+    },
+    {
+        "pk": 15,
+        "model": "games.game",
+        "fields": {
+            "publisher": 14,
+            "title": "Final Fantasy X",
+            "release_date": "2001-12-17",
+            "tags": [
+                2,
+                6,
+                9,
+                14
+            ],
+            "summary": "Final Fantasy's first game on the Playstation 2 is the first to use voice acting and a massive leap in the cinematic approach to storytelling. Stop reading and go play.",
+            "platforms": [
+                7
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/a/a7/Ffxboxart.jpg",
+            "genre": 5,
+            "developer": 14
+        }
+    },
+    {
+        "pk": 16,
+        "model": "games.game",
+        "fields": {
+            "publisher": 16,
+            "title": "The Witcher 2: Assassins of Kings",
+            "release_date": "2011-05-17",
+            "tags": [
+                2,
+                6
+            ],
+            "summary": "The second installment in the RPG saga about the Witcher, Geralt of Rivia, features a thoroughly engrossing, mature storyline defining new standards for thought-provoking, non-linear game narration. In addition to an epic story, the game features an original, brutal combat system that uniquely combines tactical elements with dynamic action. A new, modern game engine, responsible for beautiful visuals and sophisticated game mechanics puts players in the most lively and believable world ever created in an RPG game. A captivating story, dynamic combat system, beautiful graphics, and everything else that made the original Witcher such a great game are now executed in a much more advanced and sophisticated way.",
+            "platforms": [
+                1,
+                3
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/4/40/Witcher_2_cover.jpg",
+            "genre": 5,
+            "developer": 15
+        }
+    },
+    {
+        "pk": 17,
+        "model": "games.game",
+        "fields": {
+            "publisher": 11,
+            "title": "Gran Turismo 5",
+            "release_date": "2010-11-24",
+            "tags": [
+                15,
+                16
+            ],
+            "summary": "Known for its signature beauty and precision, the highly anticipated racer showcases new jaw-dropping cars, real-life tracks, and diverse racing styles. Gran Turismo promises to deliver exciting advancements to the series in the most comprehensive racing experience ever. ",
+            "platforms": [
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/8/8b/GT5-boxart-final-EU.jpg",
+            "genre": 6,
+            "developer": 17
+        }
+    },
+    {
+        "pk": 18,
+        "model": "games.game",
+        "fields": {
+            "publisher": 18,
+            "title": "DiRT 2",
+            "release_date": "2009-09-08",
+            "tags": [
+                15,
+                16
+            ],
+            "summary": "DiRT 2 takes racing games to a new level with thrilling new race types, striking locations, big event atmosphere, and a peerless line-up of super-charged speed machines, each selected to deliver spectacular, fast-paced racing. Taking players on an exhilarating World Tour, DiRT 2 delivers over 100 stunning events, including aggressive, multi-vehicle races and intense solo challenges, set in the most diverse and demanding real-world environments. From the muddy tracks of the Malaysian rainforest to spectator-packed stadiums in London and Los Angeles, racers compete in contemporary off-road race disciplines covering Rallycross, Trailblazer, Raid, Landrush, and Rally. Embracing the culture and new heroes of modern off-road racing, DiRT 2 features an exciting line-up of the best new rally drivers - including the multi medal-winning Subaru Rally Team USA driver Ken Block alongside Travis Pastrana, Dave Mirra, and Tanner Faust, who help players build their racing career.",
+            "platforms": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/7/7a/Dirt_2_box_art.jpg",
+            "genre": 6,
+            "developer": 18
+        }
+    },
+    {
+        "pk": 19,
+        "model": "games.game",
+        "fields": {
+            "publisher": 20,
+            "title": "FIFA 12",
+            "release_date": "2011-09-27",
+            "tags": [
+                16,
+                17,
+                18
+            ],
+            "summary": "FIFA Soccer 12 brings to the pitch a new game-changing Player Impact Engine, which is a physics engine built to deliver real-world physicality in every interaction on the pitch.",
+            "platforms": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/8/8f/FIFA_12_cover.jpg",
+            "genre": 7,
+            "developer": 19
+        }
+    },
+    {
+        "pk": 20,
+        "model": "games.game",
+        "fields": {
+            "publisher": 22,
+            "title": "NBA 2K12",
+            "release_date": "2011-10-04",
+            "tags": [
+                16,
+                18,
+                19
+            ],
+            "summary": "he NBA 2k Franchise is back with NBA 2K12.",
+            "platforms": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/5/5a/NBA_2K12_cover.jpg",
+            "genre": 7,
+            "developer": 21
+        }
+    },
+    {
+        "pk": 21,
+        "model": "games.game",
+        "fields": {
+            "publisher": 23,
+            "title": "Gemini Rue",
+            "release_date": "2011-02-24",
+            "tags": [
+                4,
+                7,
+                14
+            ],
+            "summary": "Gemini Rue (formerly known as Boryokudan Rue) is an intense adventure set in a bleak future dominated by the corrupt Boryokudan crime syndicate. Players assume the roles of two very different characters: Azriel Odin, an ex-assassin searching for a defector from the Gemini system, and \"Delta-Six,\" a hospital inmate whose memory has been wiped by mysterious, Big Brother types. As fate brings the two men together, players explore a world where life is cheap, identities are bought and sold, and a simple quest for redemption can change an entire galaxy's fate.",
+            "platforms": [
+                1
+            ],
+            "boxart_url": "http://media.giantbomb.com/uploads/0/3699/1780392-gemini_rue.png",
+            "genre": 8,
+            "developer": 23
+        }
+    },
+    {
+        "pk": 22,
+        "model": "games.game",
+        "fields": {
+            "publisher": 24,
+            "title": "Grim Fandango",
+            "release_date": "1998-10-30",
+            "tags": [
+                6
+            ],
+            "summary": "Something's rotten in the Land of Dead and you're being played for a sucker. Meet Manny Calavera, travel agent at the Department of Death. He sells luxury packages to souls on their four-year journey to eternal rest. But there's trouble in paradise. Help Manny untangle himself from a conspiracy that threatens his very salvation.",
+            "platforms": [
+                1
+            ],
+            "boxart_url": "http://mediakick.org/wp-content/uploads/2012/02/grim-fandango_box_front_1600x2012.jpg",
+            "genre": 8,
+            "developer": 24
+        }
+    },
+    {
+        "pk": 23,
+        "model": "games.game",
+        "fields": {
+            "publisher": 24,
+            "title": "Tales of Monkey Island",
+            "release_date": "2009-12-17",
+            "tags": [
+                10,
+                20
+            ],
+            "summary": "While explosively stripping the evil pirate LeChuck of his demonic mojo, Guybrush Threepwood inadvertently infects the entire Caribbean with the arch-fiend's expelled voodoo, which threatens to transform buccaneers into unruly pirate monsters. Pursued by a notorious cut-throat Pirate Hunter and a creepy French Physician who believes that Guybrush's eerily-infected hand holds the secret of eternal life, Threepwood sails the seven seas in search of La Esponja Grande, a legendary sea sponge with unparalleled voodoo exfoliating abilities. But little does Guybrush know, his quest is part of a larger, more sinister plot, and good and evil are not always as they seem. Who can Guybrush trust? Where can he turn? Everything you think you know will be challenged as Tales of Monkey Island builds to its unexpected finale.",
+            "platforms": [
+                1,
+                4
+            ],
+            "boxart_url": "http://upload.wikimedia.org/wikipedia/en/5/53/Tales_of_Monkey_Island_artwork.jpg",
+            "genre": 8,
+            "developer": 25
+        }
+    },
+    {
+        "pk": 1,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.blizzplanet.com/content/starcraft2/single-player-hands-on/7-20-09/Screenshot054.Jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.bicworks.com/graphics/scrnshot/sc2/Screenshot2010-07-27%2020_24_58.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.hardwareheaven.com/reviewimages/sapphire-radeon-6670-6570/starcraft2-screenshot.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://screenshot.xfire.com/s/101805323-4.jpg",
+            "game": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://thenexusnews.com/wp-content/uploads/2011/08/Deus-EX-Human-Revolution-Image-Screenshot-28.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 6,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://lazytechguys.zippykidcdn.com/wp-content/uploads/2011/08/Deus-Ex-Human-Revolution-Screenshot-7.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 7,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/08/49/84935_4817DXHR_Screenshot_ASSAULT.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://xbox360media.ign.com/xbox360/image/article/115/1153878/deus-ex-human-revolution-20110306082228823.jpg",
+            "game": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.miglo.net/walls/metal-gear-solid-4--guns-of-the-patriots-HD.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 10,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/02/89/28997_MGS4-16.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 11,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://oyster.ignimgs.com/ve3d/images/02/75/27508_MetalGearSolid4-02.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 12,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.cdn.actiontrip.com/images/features/e32007metalgearsolid4gunsofthepatriots9.jpg",
+            "game": 2
+        }
+    },
+    {
+        "pk": 13,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://s.pro-gmedia.com/videogamer/media/images/ps2/metal_gear_solid_3_subsistence/screens/metal_gear_solid_3_subsistence_4.jpg",
+            "game": 4
+        }
+    },
+    {
+        "pk": 14,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gamers-globe.com/images/screenshots/metal-gear-solid-3-snake-eater/metal-gear-solid-3-snake-eater-ps2-002.jpg",
+            "game": 4
+        }
+    },
+    {
+        "pk": 15,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gamers-globe.com/images/screenshots/metal-gear-solid-3-snake-eater/metal-gear-solid-3-snake-eater-ps2-003.jpg",
+            "game": 4
+        }
+    },
+    {
+        "pk": 16,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://image.com.com/gamespot/images/2004/reviews/914828_20041116_screen004.jpg",
+            "game": 4
+        }
+    },
+    {
+        "pk": 17,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://media.giantbomb.com/uploads/0/569/207001-deus_ex.jpg",
+            "game": 5
+        }
+    },
+    {
+        "pk": 18,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.vgchartz.com/games/pics/8664090aaa.jpg",
+            "game": 5
+        }
+    },
+    {
+        "pk": 19,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://src.sencha.io/http://www.thunderboltgames.com/s/features/thegoldengames_2.jpg",
+            "game": 5
+        }
+    },
+    {
+        "pk": 20,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.vgchartz.com/games/pics/2769201aaa.jpg",
+            "game": 6
+        }
+    },
+    {
+        "pk": 21,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i2.listal.com/image/232813/600full-deus-ex%3A-invisible-war-screenshot.jpg",
+            "game": 6
+        }
+    },
+    {
+        "pk": 22,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://jamescip7.files.wordpress.com/2011/01/mgs-screenshot.jpg",
+            "game": 7
+        }
+    },
+    {
+        "pk": 23,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.mobygames.com/images/shots/l/36794-metal-gear-solid-windows-screenshot-meryl-disguised-as-a-genome.jpg",
+            "game": 7
+        }
+    },
+    {
+        "pk": 24,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://image.com.com/gamespot/images/2001/ps2/mgs2/mgs2_screen001.jpg",
+            "game": 8
+        }
+    },
+    {
+        "pk": 25,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i2.listal.com/image/381412/600full-metal-gear-solid-2%3A-sons-of-liberty-screenshot.jpg",
+            "game": 8
+        }
+    },
+    {
+        "pk": 26,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://cdn.medialib.computerandvideogames.com/screens/screenshot_276577_thumb_wide620.jpg",
+            "game": 8
+        }
+    },
+    {
+        "pk": 27,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://toomuchgaming.files.wordpress.com/2011/04/maxpayne3-5-1280.jpg",
+            "game": 9
+        }
+    },
+    {
+        "pk": 28,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://beefjack.com/files/2012/02/maxpayne3-230-1280.jpg",
+            "game": 9
+        }
+    },
+    {
+        "pk": 29,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.tothegame.com/res/game/1684/feature/2003-09-24/screen3_large.jpg",
+            "game": 10
+        }
+    },
+    {
+        "pk": 30,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i1-games.softpedia-static.com/screenshots/8-21_3.jpg",
+            "game": 10
+        }
+    },
+    {
+        "pk": 31,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://4.bp.blogspot.com/_3WU59FOxwp4/TKaQOSFAlcI/AAAAAAAAAE0/tUf9BiT0xOY/s1600/13211_full.jpg",
+            "game": 11
+        }
+    },
+    {
+        "pk": 32,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i1-games.softpedia-static.com/screenshots/Max-Payne_5.jpg",
+            "game": 11
+        }
+    },
+    {
+        "pk": 33,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.sonyinsider.com/wp-content/uploads/2009/05/09-noscale.jpg",
+            "game": 12
+        }
+    },
+    {
+        "pk": 34,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www-scf.usc.edu/~wang59/itp104/project/images/god-of-war-3-release-date-screenshot.jpg",
+            "game": 12
+        }
+    },
+    {
+        "pk": 35,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://0.tqn.com/d/compactiongames/1/0/d/8/halflife28.jpg",
+            "game": 13
+        }
+    },
+    {
+        "pk": 36,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://0.tqn.com/d/compactiongames/1/0/b/8/halflife26.jpg",
+            "game": 13
+        }
+    },
+    {
+        "pk": 37,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gamegrin.com/files/images/games/l/left_4_dead_2/standard_Left_4_Dead_2_Screenshot-2_(20).jpg",
+            "game": 14
+        }
+    },
+    {
+        "pk": 38,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://buildabettergame.files.wordpress.com/2011/09/gameplay.jpg",
+            "game": 14
+        }
+    },
+    {
+        "pk": 39,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i2.listal.com/image/469881/600full-final-fantasy-x-screenshot.jpg",
+            "game": 15
+        }
+    },
+    {
+        "pk": 40,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://i2.listal.com/image/469878/600full-final-fantasy-x-screenshot.jpg",
+            "game": 15
+        }
+    },
+    {
+        "pk": 41,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gaming-age.com/wp-content/uploads/2012/04/witcher2x3601.jpg",
+            "game": 16
+        }
+    },
+    {
+        "pk": 42,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.rpgfrance.com/dev/medias/images/galerie/TheWitcher2/The-Witcher-2-Screenshot-36.jpg",
+            "game": 16
+        }
+    },
+    {
+        "pk": 43,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://s.pro-gmedia.com/videogamer/media/images/ps3/gran_turismo_5_prologue/screens/gran_turismo_5_prologue_165.jpg",
+            "game": 17
+        }
+    },
+    {
+        "pk": 44,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gtpla.net/wp-content/uploads/2009/06/gran-turismo-5-screenshot-17.png",
+            "game": 17
+        }
+    },
+    {
+        "pk": 45,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.xgcdb.com/pub/colin_mcrae_dirt_2_5.jpg",
+            "game": 18
+        }
+    },
+    {
+        "pk": 46,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://s.pro-gmedia.com/videogamer/media/images/xbox360/colin_mcrae_dirt_2/screens/colin_mcrae_dirt_2_45.jpg",
+            "game": 18
+        }
+    },
+    {
+        "pk": 47,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://web-vassets.ea.com/Assets/Richmedia/PS3_kaka_run.jpg",
+            "game": 19
+        }
+    },
+    {
+        "pk": 48,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.epltalk.com/media/2011/06/fifa-12-screenshot-01.jpg",
+            "game": 19
+        }
+    },
+    {
+        "pk": 49,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.chicagonow.com/game-time/files/2011/09/NBA4-624x351.jpg",
+            "game": 20
+        }
+    },
+    {
+        "pk": 50,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.videogamesblogger.com/wp-content/uploads/2011/09/NBA-2K12-Screenshot-131-646x325.jpg",
+            "game": 20
+        }
+    },
+    {
+        "pk": 51,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://image.com.com/gamespot/images/2011/054/618950_20110224_screen007.jpg",
+            "game": 21
+        }
+    },
+    {
+        "pk": 52,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://1.bp.blogspot.com/-3-elAxX1wR8/TWbEgTvFctI/AAAAAAAAE_c/e_nDIQZmTFw/s640/GR_screen4.png",
+            "game": 21
+        }
+    },
+    {
+        "pk": 53,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://2.bp.blogspot.com/-9tVvAaBlXEc/T6HfJBUi8iI/AAAAAAAAAHE/mp_atFUiIkc/s1600/7635-grim-fandango-windows-screenshot-cafe-calaveras.jpg",
+            "game": 22
+        }
+    },
+    {
+        "pk": 54,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://www.gamedynamo.com/images/galleries/photo/2278/10-underrated-games-grim-fandango.jpg",
+            "game": 22
+        }
+    },
+    {
+        "pk": 55,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://ve3dmedia.ign.com/images/04/89/48962_orig.jpg",
+            "game": 23
+        }
+    },
+    {
+        "pk": 56,
+        "model": "games.screenshot",
+        "fields": {
+            "url": "http://junglebiscuit.com/images/oldgamestalesofmonkeyislandscreenshot2.jpg",
+            "game": 23
+        }
+    }
+]

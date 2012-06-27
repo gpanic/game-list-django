@@ -18,6 +18,8 @@ urlpatterns = patterns('',
     url(r'^search/', include('apps.search.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
+    (r'^forum/', include('pybb.urls', namespace='pybb')),
+
     # Examples:
     # url(r'^$', 'gamelist.views.homegamelistname='home'),
     # url(r'^gamelist/', include('gamelist.foo.urls')),
