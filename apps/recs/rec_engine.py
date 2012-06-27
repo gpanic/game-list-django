@@ -6,6 +6,10 @@ import operator
 
 from apps.games.models import Game
 
+# TODO
+# Exception Handling
+# Result Storage
+
 DB_TABLE = 'recs_user_rating_matrix'
 NUM_SIMILAR_ITEMS = 5
 
@@ -107,14 +111,12 @@ def get_rated_similar_items(user_id, item_id, number):
 		if rating != 0:
 			try:
 				sim = similarity(item_id, i)
-				item_rating_sim_list.append([i, rating, sim])
+				if sim >= 0:
+					item_rating_sim_list.append([i, rating, sim])
 			except SimilarityException:
 				pass
 	item_rating_sim_list.sort(key=operator.itemgetter(2), reverse=True)
-	if len(item_rating_sim_list) >=5:
-		return item_rating_sim_list[:5]
-	else:
-		raise RatingException('User needs more ratings.')
+	return item_rating_sim_list[:5]
 
 
 
