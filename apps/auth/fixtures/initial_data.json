@@ -141,6 +141,27 @@
         }
     },
     {
+        "pk": 8,
+        "model": "auth.user",
+        "fields": {
+            "username": "user7",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2012-06-27T21:49:59.580Z",
+            "groups": [],
+            "user_permissions": [
+                57,
+                59
+            ],
+            "password": "pbkdf2_sha256$10000$pxTOZz1v1geH$Wv4w15yhZlw/uBKFt4DG5Ybgjt+ChHT79Z/VUbRiZXI=",
+            "email": "user7@user7.com",
+            "date_joined": "2012-06-27T21:49:53.712Z"
+        }
+    },
+    {
         "pk": 1,
         "model": "auth.userprofile",
         "fields": {
@@ -285,6 +306,27 @@
             "signature": "",
             "autosubscribe": true,
             "user": 7
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.userprofile",
+        "fields": {
+            "website": "",
+            "about": "",
+            "show_signatures": true,
+            "language": "English",
+            "location": "",
+            "signature_html": "",
+            "gender": 0,
+            "time_zone": 3.0,
+            "gravatar_email": "user7@user7.com",
+            "post_count": 0,
+            "birthday": null,
+            "avatar": "",
+            "signature": "",
+            "autosubscribe": true,
+            "user": 8
         }
     }
 ]

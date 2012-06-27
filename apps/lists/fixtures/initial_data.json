@@ -49,6 +49,13 @@
         }
     },
     {
+        "pk": 8,
+        "model": "lists.list",
+        "fields": {
+            "user": 8
+        }
+    },
+    {
         "pk": 1,
         "model": "lists.listitem",
         "fields": {
@@ -1763,6 +1770,244 @@
             "time_spent": null,
             "date_finish": null,
             "game": 18
+        }
+    },
+    {
+        "pk": 102,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 7,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 9
+        }
+    },
+    {
+        "pk": 103,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 5,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 20
+        }
+    },
+    {
+        "pk": 104,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 7,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 3
+        }
+    },
+    {
+        "pk": 105,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 10,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 16
+        }
+    },
+    {
+        "pk": 106,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 4,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 17
+        }
+    },
+    {
+        "pk": 107,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 7,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 12
+        }
+    },
+    {
+        "pk": 108,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 3,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 14
+        }
+    },
+    {
+        "pk": 109,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 7,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 2
+        }
+    },
+    {
+        "pk": 110,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 8,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 18
+        }
+    },
+    {
+        "pk": 111,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 9,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 13
+        }
+    },
+    {
+        "pk": 112,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 8,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 8
+        }
+    },
+    {
+        "pk": 113,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 6,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 5
+        }
+    },
+    {
+        "pk": 114,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 8,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 22
+        }
+    },
+    {
+        "pk": 115,
+        "model": "lists.listitem",
+        "fields": {
+            "status": null,
+            "rating": 8,
+            "times_finished": null,
+            "notes": "",
+            "date_start": null,
+            "game_list": 8,
+            "money_spent": null,
+            "time_playthrough": null,
+            "time_spent": null,
+            "date_finish": null,
+            "game": 10
         }
     }
 ]
