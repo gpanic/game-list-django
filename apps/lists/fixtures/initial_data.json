@@ -1623,15 +1623,15 @@
         "pk": 93,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 1,
             "rating": 10,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "50",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 20,
             "date_finish": null,
             "game": 15
         }
@@ -1640,15 +1640,15 @@
         "pk": 94,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 1,
             "rating": 10,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "50",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 100,
             "date_finish": null,
             "game": 1
         }
@@ -1657,15 +1657,15 @@
         "pk": 95,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 2,
             "rating": 9,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "25",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 23,
             "date_finish": null,
             "game": 3
         }
@@ -1674,15 +1674,15 @@
         "pk": 96,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 2,
             "rating": 10,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "5",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 15,
             "date_finish": null,
             "game": 21
         }
@@ -1691,15 +1691,15 @@
         "pk": 97,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 2,
             "rating": 10,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "20",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 30,
             "date_finish": null,
             "game": 2
         }
@@ -1708,15 +1708,15 @@
         "pk": 98,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 2,
             "rating": 9,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "10",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 20,
             "date_finish": null,
             "game": 8
         }
@@ -1725,15 +1725,15 @@
         "pk": 99,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 2,
             "rating": 8,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "10",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 30,
             "date_finish": null,
             "game": 5
         }
@@ -1742,15 +1742,15 @@
         "pk": 100,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 5,
             "rating": 2,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "0",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 5,
             "date_finish": null,
             "game": 20
         }
@@ -1759,15 +1759,15 @@
         "pk": 101,
         "model": "lists.listitem",
         "fields": {
-            "status": null,
+            "status": 5,
             "rating": 4,
             "times_finished": null,
             "notes": "",
             "date_start": null,
             "game_list": 1,
-            "money_spent": null,
+            "money_spent": "0",
             "time_playthrough": null,
-            "time_spent": null,
+            "time_spent": 2,
             "date_finish": null,
             "game": 18
         }

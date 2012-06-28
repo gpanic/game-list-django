@@ -81,6 +81,14 @@
 					<td>{{ user_profile.list.get_average_rating|floatformat:1 }}</td>
 				</tr>
 				<tr>
+					<th>Favorite genre</th>
+					<td>{{ favorite_genre.name }}</td>
+				</tr>
+				<tr>
+					<th>Favorite platform</th>
+					<td>{{ favorite_platform.name }}</td>
+				</tr>
+				<tr>
 					<th style="width:125px;">Reviews</th>
 					<td>{{ user_profile.review_set.all|length }}</td>
 				</tr>

@@ -6,8 +6,9 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from hashlib import md5
+from collections import Counter
 
-from apps.games.models import Game
+from apps.games.models import Game, Genre, Platform
 from apps.profiles.forms import UserUpdateForm
 from apps.recs import rec_engine
 
@@ -18,6 +19,18 @@ def user_details(request, username):
 	userrecs = user.userrec_set.order_by('-date_created')[:5]
 	gravatar_url = "http://www.gravatar.com/avatar/" + md5(user.email.strip().lower()).hexdigest() + '?s=150'
 
+	genres = []
+	platforms = []
+	list_items = user.list.listitem_set.all()
+	for item in list_items:
+		genres.append(item.game.genre.id)
+		for p in item.game.platforms.all():
+			platforms.append(p.id)
+	c = Counter(genres)
+	favorite_genre = Genre.objects.get(pk=c.most_common(1)[0][0])
+	c = Counter(platforms)
+	favorite_platform = Platform.objects.get(pk=c.most_common(1)[0][0])
+
 	return render_to_response(
 		'profiles/user_details.html',
 		{ 
@@ -25,6 +38,8 @@ def user_details(request, username):
 			'reviews': reviews,
 			'userrecs': userrecs,
 			'gravatar_url': gravatar_url,
+			'favorite_genre': favorite_genre,
+			'favorite_platform': favorite_platform,
 		},
 		context_instance=RequestContext(request)
 	)

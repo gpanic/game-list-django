@@ -22,4 +22,7 @@ urlpatterns = patterns('apps.recs.views',
 	url(r'^add/$', 'userrec_create', name='recs_userrec_create'),
 	url(r'^(?P<userrec_id>\d+)/edit/$', 'userrec_update', name='recs_userrec_update'),
 	url(r'^(?P<userrec_id>\d+)/delete/$', 'userrec_delete', name='recs_userrec_delete'),
+	url(r'^create_matrix/$', 'create_matrix', name='create_matrix'),
+	url(r'^drop_matrix/$', 'drop_matrix', name='drop_matrix'),
+	url(r'^populate_matrix/$', 'populate_matrix', name='populate_matrix'),
 )

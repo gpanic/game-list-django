@@ -1,0 +1,11 @@
+{% load thumbnail %}
+
+<div class="avatar">
+    <a href="{{ post.user.get_profile.get_absolute_url }}">
+    {% thumbnail post.user.get_profile.avatar "80x80" as avatar %}
+    <img src="{{ post.user.get_profile.get_gravatar_url }}"></img>
+    {% empty %}
+    <img src="{{ post.user.get_profile.get_gravatar_url }}"></img>
+    {% endthumbnail %}
+    </a>
+</div>

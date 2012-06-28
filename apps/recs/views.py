@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -9,6 +9,7 @@ from django.http import Http404
 from django.contrib.auth.models import User
 
 from apps.games.models import Game
+from apps.recs import rec_engine
 from apps.recs.forms import UserRecForm, UserRecUpdateForm
 from apps.recs.models import UserRec
 
@@ -89,3 +90,33 @@ def userrec_delete(request, userrec_id):
 	else:
 		raise Http404
 	return redirect(reverse('recs_userrec_index'), context_instance=RequestContext(request))
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def create_matrix(request):
+	rec_engine.create_matrix()
+	messages.success(request, 'Matrix created.')
+	try:
+		return redirect(request.META['HTTP_REFERER'], context_instance=RequestContext(request))
+	except KeyError:
+		raise Http404
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def drop_matrix(request):
+	rec_engine.drop_matrix()
+	messages.success(request, 'Matrix dropped.')
+	try:
+		return redirect(request.META['HTTP_REFERER'], context_instance=RequestContext(request))
+	except KeyError:
+		raise Http404
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def populate_matrix(request):
+	rec_engine.populate_matrix()
+	messages.success(request, 'Matrix populated.')
+	try:
+		return redirect(request.META['HTTP_REFERER'], context_instance=RequestContext(request))
+	except KeyError:
+		raise Http404

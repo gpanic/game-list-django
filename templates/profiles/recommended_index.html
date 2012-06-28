@@ -4,6 +4,7 @@
 <div class="page-header">
 	<h1>{{ user.username }}'s Recommended Games</h1>
 </div>
+{% if games %}
 {% for game, rating, rating_percent in games %}
 <div class="row" style="padding-top:25px;padding-bottom:25px;border-bottom: 1px solid #EEE;">
 	<div class="span2">
@@ -52,4 +53,7 @@
 	</div>
 </div>
 {% endfor %}
+{% else %}
+No recommended games yet.
+{% endif %}
 {% endblock %}
