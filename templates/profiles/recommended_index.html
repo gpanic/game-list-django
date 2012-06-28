@@ -1,0 +1,55 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ block.super }}&nbsp;|&nbsp;{{ user.username }}'s Recommended Games{% endblock %}
+{% block content %}
+<div class="page-header">
+	<h1>{{ user.username }}'s Recommended Games</h1>
+</div>
+{% for game, rating, rating_percent in games %}
+<div class="row" style="padding-top:25px;padding-bottom:25px;border-bottom: 1px solid #EEE;">
+	<div class="span2">
+		<a href="{{ game.boxart_url }}" class="thumbnail">
+			<img src="{{ game.boxart_url }}"></img>
+		</a>
+	</div>
+	<div class="span10">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td colspan="2">
+						<h3 style="display:inline;margin-right:5px;"><a href="{% url games_game_details game.id %}">{{ game.title }}</a></h3>
+						{% if game in user.list.get_games %}
+						<a href="{% url lists_listitem_delete user.username game.id %}" class="icon-minus-sign"></a>
+						<a href="{% url lists_listitem_update user.username game.id %}" class="icon-edit"></a>
+						{% else %}
+						<a href="{% url lists_listitem_create user.username game.id %}" class="icon-plus-sign"></a>
+						{% endif %}
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="span2">Alignment</th>
+					<td colspan="3" style="padding:12px 20px;">
+						<div class="progress" style="margin-bottom:0px;">
+							<div class="bar" style="width:{{ rating_percent }}%;"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Predicted rating</th>
+					<td class="span3">{{ rating|floatformat:1 }}</td>
+					<th class="span2">User rating</th>
+					<td class="span3">{{ game.get_user_rating|floatformat:1 }}</td>
+				</tr>
+				<tr>
+					<th>Genre</th>
+					<td>{{ game.genre }}</td>
+					<th>Platforms</th>
+					<td>{{ game.get_platforms }}</td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}

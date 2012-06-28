@@ -7,7 +7,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from hashlib import md5
 
+from apps.games.models import Game
 from apps.profiles.forms import UserUpdateForm
+from apps.recs import rec_engine
 
 def user_details(request, username):
 	user = get_object_or_404(User, username=username)
@@ -66,5 +68,21 @@ def user_update(request, username):
 	return render_to_response(
 		'profiles/user_edit.html',
 		{ 'form': form, },
+		context_instance=RequestContext(request)
+	)
+
+@login_required
+def recommended_index(request, username):
+	if request.user.username == username:
+		recs = rec_engine.get_recommendations(request.user.id, 5)
+		games = []
+		for rec in recs:
+			games.append([Game.objects.get(pk=rec[0]), rec[1], rec[1]*10])
+	else:
+		raise Http404
+
+	return render_to_response(
+		'profiles/recommended_index.html',
+		{ 'games': games, },
 		context_instance=RequestContext(request)
 	)
