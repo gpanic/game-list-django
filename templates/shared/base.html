@@ -55,6 +55,9 @@
 						<li>
 							<a href="{% url recs_userrec_index_for_user user.username %}">My Recommendations</a>
 						</li>
+						<li>
+							<a href="{% url profiles_recommended_index user.username %}">Recommended</a>
+						</li>
 						{% if user.is_staff %}
 						<li class="divider"></li>
 						<li>

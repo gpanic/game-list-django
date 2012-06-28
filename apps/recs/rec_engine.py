@@ -1,14 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import connection, transaction
 import math
-import re
 import operator
+import re
 
 from apps.games.models import Game
-
-# TODO
-# Exception Handling
-# Result Storage
 
 DB_TABLE = 'recs_user_rating_matrix'
 NUM_SIMILAR_ITEMS = 5
@@ -71,6 +67,22 @@ def get_user_average_rating(user_id):
 	user_row = filter(lambda a: a != 0, user_row)
 	return float(sum(user_row[1:])) / float(len(user_row[1:]))
 
+def get_all_item_ids():
+	query = 'PRAGMA TABLE_INFO (' + DB_TABLE + ')'
+	cursor = connection.cursor()
+	table_info = list(cursor.execute(query))
+	table_info = table_info[1:]
+	item_ids = [int(re.split('(\d+)', c[1])[1]) for c in table_info]
+	return item_ids
+
+def get_unrated_ids(user_id):
+	item_ids = get_all_item_ids()
+	unrated_ids = []
+	for i in item_ids:
+		if get_rating(user_id, i) == 0:
+			unrated_ids.append(i)
+	return unrated_ids
+
 def similarity(item1_id, item2_id):
 	query = 'SELECT user_id, game_1 FROM ' + DB_TABLE + ' WHERE game_' + str(item1_id) + '<>0 AND game_' + str(item2_id) + '<> 0'
 	cursor = connection.cursor()
@@ -99,11 +111,7 @@ def similarity(item1_id, item2_id):
 
 
 def get_rated_similar_items(user_id, item_id, number):
-	query = 'PRAGMA TABLE_INFO (' + DB_TABLE + ')'
-	cursor = connection.cursor()
-	table_info = list(cursor.execute(query))
-	table_info = table_info[1:]
-	item_ids = [int(re.split('(\d+)', c[1])[1]) for c in table_info]
+	item_ids = get_all_item_ids()
 	item_ids.remove(item_id)
 	item_rating_sim_list = []
 	for i in item_ids:
@@ -129,4 +137,9 @@ def weighted_sum(user_id, item_id):
 		sum2 += math.fabs(item[2])
 	return sum1 / sum2
 
-
+def get_recommendations(user_id, number):
+	item_ids = get_unrated_ids(user_id)
+	item_weighted_sums = [weighted_sum(user_id, i) for i in item_ids]
+	recs = zip(item_ids, item_weighted_sums)
+	recs.sort(key=operator.itemgetter(1), reverse=True)
+	return recs[:number]
